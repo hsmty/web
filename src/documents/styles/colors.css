@@ -1,0 +1,26 @@
+html,
+body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+
+#container {
+	min-height: calc(100% - 60px);
+	position: relative;
+	padding-top: 60px;
+}
+
+#main-content {
+	padding-bottom: 237px;
+}
+
+footer {
+	background-color: #8BC53F;
+	height: 200px;
+	margin-top: 35px;
+	border-top: 2px solid #000000;
+	bottom:0;
+	position: absolute;
+	width:100%;
+}
