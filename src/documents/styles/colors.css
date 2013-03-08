@@ -3,6 +3,7 @@ body {
    margin:0;
    padding:0;
    height:100%;
+	 width: 100%;
 }
 
 #container {
@@ -26,4 +27,24 @@ footer {
 	bottom: 0;
 	position: absolute;
 	width:100%;
+}
+
+@media (max-width: 767px) {
+	.navbar-fixed-top {
+	  margin-right: 0;
+	  margin-left: 0;
+	}
+	
+	#main-content {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
+
+#api_status.space_open {
+	color: #8BC53F;
+}
+
+#api_status.space_closed {
+	color: inherit;
 }

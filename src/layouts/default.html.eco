@@ -55,26 +55,42 @@
 					<!-- Everything you want hidden at 940px or less, place within here -->
 					<div class="nav-collapse collapse">
 						<!-- .nav, .navbar-search, .navbar-form, etc -->
+						<ul class="nav pull-right" id="contact">
+							<li><a href="mailto:general@hsmty.org" title="Escribe un E-mail"><i class="icon-envelope"></i></a></li>
+							<li><a href="http://www.facebook.com/hackerspacemty" title="Síguenos en Facebook"><i class="icon-facebook"></i></a></li>
+							<li><a href="http://www.twitter.com/hackersmty" title="Síguenos en twitter"><i class="icon-twitter"></i></a></li>
+							<li><a href="/ubicacion.html" title="Ubicación"><i class="icon-map-marker"></i></a></li>
+							<li><a href="http://webchat.freenode.net/?channels=hsmty">#IRC</a></li>
+							<!--li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									Account
+									<b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu">
+									<li>WOOOO</li>
+									<li>HOO!</li>
+								</ul>
+							</li-->
+						</ul>
 					</div>
-					<ul class="nav pull-right" id="contact">
-						<li><a href="mailto:general@hsmty.org"><i class="icon-envelope"></i></a></li>
-						<li><a href="http://www.facebook.com/hackerspacemty"><i class="icon-facebook"></i></a></li>
-						<li><a href="http://www.twitter.com/hackersmty"><i class="icon-twitter"></i></a></li>
-						<li><a href="http://webchat.freenode.net/?channels=hsmty">#IRC</a></li>
-					</ul>
 				</div>
 			</div>
 		</div>
 	</header>
 	<article id="main-content" class="container">
-		<%- @content %>
+		
+		<div class="row">
+			
+				<%- @content %>
+				
+		</div>
 	</article>
 	
 	<footer>
-		<div class="container-fluid">
-			<div class="row-fluid">
+		<div class="container">
+			<div class="row">
 				<div class="span3 offset9">
-					Hola
+					En este momento el espacio está: <span id="api_status">abierto/cerrado</span>
 				</div>
 			</div>
 		</div>
