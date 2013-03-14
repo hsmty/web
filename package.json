@@ -2,8 +2,8 @@
 	"name": "html5-boilerplate.docpad",
 	"version": "0.1.0",
 	"private": true,
-	"description": "HTML5 Boilerplate skeleton for DocPad. Bare essentials for building a modern website with best practices.",
-	"homepage": "https://github.com/docpad/html5-boilerplate.docpad",
+	"description": "The Hackerspace Monterrey awesome docpad website",
+	"homepage": "https://github.com/hsmty/web",
 	"keywords": [
 		"docpad-skeleton",
 		"docpad",
@@ -12,19 +12,19 @@
 		"html5 boilerplate",
 		"h5bp"
 	],
-	"author": "Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
+	"author": "Heron Ordoñez (http://github.com/heronog)",
 	"maintainers": [
-		"Benjamin Lupton <b@lupton.cc> (http://balupton.com)"
+		"Heron Ordoñez (http://github.com/heronog)"
 	],
 	"contributors": [
-		"Benjamin Lupton <b@lupton.cc> (http://balupton.com)"
+		"Heron Ordoñez (http://github.com/heronog)"
 	],
 	"bugs": {
-		"url": "https://github.com/docpad/html5-boilerplate.docpad/issues"
+		"url": "https://github.com/hsmty/web/issues"
 	},
 	"repository" : {
 		"type" : "git",
-		"url" : "http://github.com/docpad/html5-boilerplate.docpad.git"
+		"url" : "http://github.com/hsmty/web.git"
 	},
 	"engines" : {
 		"node": "0.8.x",
