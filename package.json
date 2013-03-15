@@ -5,12 +5,12 @@
 	"description": "The Hackerspace Monterrey awesome docpad website",
 	"homepage": "https://github.com/hsmty/web",
 	"keywords": [
-		"docpad-skeleton",
-		"docpad",
-		"website",
-		"skeleton",
-		"html5 boilerplate",
-		"h5bp"
+		"hackerspace",
+		"hacker",
+		"maker",
+		"workshop",
+		"mystery",
+		"fabrication"
 	],
 	"author": "Heron Ordoñez (http://github.com/heronog)",
 	"maintainers": [
@@ -38,7 +38,9 @@
 		"docpad-plugin-partials": "2.x",
 		"docpad-plugin-stylus": "2.x",
 		"docpad-plugin-text": "2.x",
-		"docpad-plugin-sass": "2.x"
+		"docpad-plugin-sass": "2.x",
+		"docpad-plugin-associatedfiles": "2.x",
+		"docpad-plugin-thumbnails": "2.x"
 	},
 	"devDependencies": {
 		"docpad-plugin-livereload": "2.x"

@@ -18,7 +18,7 @@
 	<%- @getBlock('meta').toHTML() %>
 
 	<!-- DocPad Styles + Our Own -->
-	<%- @getBlock('styles').add(['/vendor/normalize.css','/styles/style.css','/bootstrap/css/bootstrap.css','/bootstrap/css/bootstrap-responsive.css','/styles/colors.css', '/vendor/fontawesome/css/font-awesome.css']).toHTML() %>
+	<%- @getBlock('styles').add(['/vendor/normalize.css','/styles/style.css','/bootstrap/css/bootstrap.css','/bootstrap/css/bootstrap-responsive.css','/styles/colors.css', '/vendor/fontawesome/css/font-awesome.css', '/styles/front-gallery.css']).toHTML() %>
 
 	<!-- Icons -->
 	<!-- Favicon -->
@@ -31,6 +31,8 @@
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/icons/apple-touch-icon-114x114-precomposed.png" />
 	<!-- For third-generation iPad with high-resolution Retina display: -->
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/icons/apple-touch-icon-144x144-precomposed.png" />
+	
+	<%= @partial('gallery_head.html'); %>
 </head>
 <body>
     <!--[if lt IE 7]>
@@ -78,45 +80,8 @@
 		</div>
 	</header>
 	<article id="main-content" class="container">
-		<div class="row">
-		  <!-- Carousel
-		     ================================================== -->
-		     <div id="myCarousel" class="carousel slide">
-		       <div class="carousel-inner">
-		         <div class="item active">
-		           <img src="http://dummyimages.com/1024x768/000000/ffffff.png&text=something" alt="">
-		           <div class="container">
-		             <div class="carousel-caption">
-		               <h1>Example headline.</h1>
-		               <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-		               <a class="btn btn-large btn-primary" href="#">Sign up today</a>
-		             </div>
-		           </div>
-		         </div>
-		         <div class="item">
-		           <img src="http://dummyimages.com/1024x768/00ff00/ffffff.png&text=something" alt="">
-		           <div class="container">
-		             <div class="carousel-caption">
-		               <h1>Another example headline.</h1>
-		               <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-		               <a class="btn btn-large btn-primary" href="#">Learn more</a>
-		             </div>
-		           </div>
-		         </div>
-		         <div class="item">
-		           <img src="http://dummyimages.com/1024x768/00ffff/ff00ff.png&text=something" alt="">
-		           <div class="container">
-		             <div class="carousel-caption">
-		               <h1>One more for good measure.</h1>
-		               <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-		               <a class="btn btn-large btn-primary" href="#">Browse gallery</a>
-		             </div>
-		           </div>
-		         </div>
-		       </div>
-		       <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-		       <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
-		     </div><!-- /.carousel -->
+		<div class="row" id="front-gallery">
+		  <%= @partial('gallery.html.eco', {gallery: @getGallery() }) %>
 		</div>
 		<div class="row">
 			
@@ -126,20 +91,17 @@
 	</article>
 	
 	<footer>
-		<div class="container">
-			<div class="row">
-				<div class="span3 offset9">
-					En este momento el espacio está: <span id="api_status">abierto/cerrado</span>
-				</div>
-			</div>
-		</div>
+		<%= @partial('footer.html') %>
 	</footer>
 </div>
 	<!-- jQuery -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="/vendor/jquery.js"><\/script>')</script>
 
+	<!-- Gallery -->
+	<%= @partial('gallery_closure.html') %>
+
 	<!-- DocPad Scripts + Our Own -->
-	<%- @getBlock('scripts').add(['/vendor/log.js', '/vendor/modernizr.js', "/scripts/script.js", '/bootstrap/js/bootstrap.js']).toHTML() %>
+	<%- @getBlock('scripts').add(['/vendor/log.js', '/vendor/modernizr.js', "/scripts/script.js", '/bootstrap/js/bootstrap.js', '/vendor/blueimp/js/load-image.js', '/vendor/blueimp/js/bootstrap-image-gallery.js']).toHTML() %>
 </body>
 </html>

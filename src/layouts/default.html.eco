@@ -78,22 +78,13 @@
 		</div>
 	</header>
 	<article id="main-content" class="container">
-		
 		<div class="row">
-			
 				<%- @content %>
-				
 		</div>
 	</article>
 	
 	<footer>
-		<div class="container">
-			<div class="row">
-				<div class="span3 offset9">
-					En este momento el espacio está: <span id="api_status">abierto/cerrado</span>
-				</div>
-			</div>
-		</div>
+		<%= @partial('footer.html') %>
 	</footer>
 </div>
 	<!-- jQuery -->

@@ -58,7 +58,13 @@ docpadConfig = {
 			# Merge the document keywords with the site keywords
 			@site.keywords.concat(@document.keywords or []).join(', ')
 
-
+		getGallery: ->
+      #Get the associated images of the document and create a gallery array
+      images = @getDocument().getAssociatedFiles().findAll({extension: $in: ['jpg', 'JPG', 'png', 'PNG']}).toJSON()
+      gallery = []
+      for image in images
+      	gallery.push({thumb: @getThumbnail(image.url, {w: 100, h: 100}), name: image.title or image.filename , url: image.url })
+      gallery
 	# =================================
 	# DocPad Events
 
