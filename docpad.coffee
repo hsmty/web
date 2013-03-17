@@ -16,7 +16,7 @@ docpadConfig = {
 
 			# Here are some old site urls that you would like to redirect from
 			oldUrls: [
-				'beta.hsmty.org'
+				#'beta.hsmty.org'
 			]
 
 			# The default title of our website
