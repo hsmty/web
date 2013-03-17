@@ -1,0 +1,46 @@
+---
+layout: 'frontpage'
+title: 'Información'
+---
+<div class="row">
+  <div class="span4">
+   <img class="img-rounded" src="/images/logo.png" />
+   <h4>Un espacio para hackers en Monterrey</h4>
+  </div>
+  <div class="span8">
+      <h1>Hackerspace Monterrey</h1>
+    
+      <blockquote>        
+        <p>Hackerspace </p>
+        <small>(hacklab, makerspace, creative space)</small>
+        <p>
+          un lugar en el que gente con intereses comunes;
+          frecuentemente en computadoras, tecnología, ciencia y arte electrónico o digital se reúnen para aprender, 
+          socializar y <cite title="For greater good">colaborar</cite>
+        </p>
+      </blockquote>
+      <p class="lead">
+        Se puede ver un hackerspace como un laboratorio abierto que integra áreas de
+        talleres de trabajo, maquinado y estudios; en el cual se comparten los recursos y el conocimiento para
+        diseñar y construir.
+      </p>
+  </div>
+</div>
+<div class="row">
+  <div class="span4">
+    <h2>
+  </div>
+  <div class="span4">
+    
+  </div>
+  <div class="span4">
+    
+  </div>
+</div>
+<div class="row">
+  <div class="span12">
+    <div id="front-gallery">
+      <%= @partial('gallery.html.eco', {gallery: @getGallery() }) %>
+    </div>
+  </div>
+</div>

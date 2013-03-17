@@ -79,15 +79,8 @@
 			</div>
 		</div>
 	</header>
-	<article id="main-content" class="container">
-		<div class="row" id="front-gallery">
-		  <%= @partial('gallery.html.eco', {gallery: @getGallery() }) %>
-		</div>
-		<div class="row">
-			
-				<%- @content %>
-				
-		</div>
+	<article id="main-content" class="container">		
+	  <%- @content %>
 	</article>
 	
 	<footer>

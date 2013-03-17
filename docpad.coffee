@@ -63,7 +63,7 @@ docpadConfig = {
       images = @getDocument().getAssociatedFiles().findAll({extension: $in: ['jpg', 'JPG', 'png', 'PNG']}).toJSON()
       gallery = []
       for image in images
-      	gallery.push({thumb: @getThumbnail(image.url, {w: 100, h: 100}), name: image.title or image.filename , url: image.url })
+      	gallery.push({thumb: @getThumbnail(image.url, "zoomcrop", {w: 300, h: 300}), name: image.basename or image.filename , url: image.url })
       gallery
 	# =================================
 	# DocPad Events
