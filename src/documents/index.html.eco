@@ -10,8 +10,9 @@ title: 'Información'
         <h1>Hackerspace Monterrey</h1>
         <h4> -- <em>(hacklab, makerspace, creative space)</em></h4>
         <p class="lead">
-          un lugar en el que gente con intereses comunes, frecuentemente en computadoras, tecnología, ciencia y
-          arte electrónico o digital se reúnen para aprender, socializar y colaborar.
+          Un lugar en el que gente con intereses comunes, frecuentemente en
+	  computadoras, tecnología, ciencia y arte electrónico o digital se
+	  reúnen para aprender, socializar y colaborar.
         </p>
   </div>
 </div>
@@ -20,45 +21,52 @@ title: 'Información'
     <h3>Únete a la comunidad de creadores, inventores y artistas</h3>
     <p class="text-center"><i class="icon-globe super-icon"></i></p>
     <p>
-      ¿Tienes proyectos personales o ideas que quieras ver realizadas? Visítanos y afíliate, todos los perfiles son
-      bienvenidos. Nuestros miembros son artistas, diseñadores, programadores e ingenieros que están dispuestos a 
-      aprender y enseñar.
+      ¿Tienes proyectos personales o ideas que quieras ver realizadas?
+      Visítanos y afíliate, todos los perfiles son bienvenidos. Nuestros 
+      miembros son artistas, diseñadores, programadores e ingenieros que están
+      dispuestos a aprender y enseñar.
     </p>
-    <h4>Estás interesado?</h4>
+    <h4>¿Estás interesado?</h4>
     <p>
-      Visítanos en nuestra junta semanal de los <b>martes a las 7pm</b> o en el OpenLab <b>los sábados a partir de las 2pm</b>
+      Visítanos en nuestra junta semanal de los <b>martes a las 7pm</b> o en el
+      OpenLab, <b>los sábados a partir de las 2pm</b>.
     </p>
     <p><a href="/ubicacion.html">Ir al mapa</a></p>
   </div>
   <div class="span4">
-    <h3>Qué tan lejos quieres llevar tus <em>ideas</em>?</h3>
+    <h3>¿Qué tan lejos quieres llevar tus <em>ideas</em>?</h3>
     <p>
-      Todos tenemos una idea para un proyecto. ¿Qué te falta para realizarlo? Al unirte al hackerspace, obtienes acceso a cursos,
-      talleres de carpinteria y electrónica y el conocimiento y apoyo de gente como tú que busca aprender y desarrollarse 
-      mientras hace realidad su visión
+      Todos tenemos una idea para un proyecto. ¿Qué te falta para realizarlo?
+      Al unirte al hackerspace, obtienes acceso a cursos, taller de carpinteria,
+      taller de electrónica, el conocimiento y el apoyo de gente como tú que
+      busca aprender y desarrollarse mientras hace realidad su visión.
     </p>
     <p class="text-center"><i class="icon-lightbulb super-icon"></i></p>
     <p>
-      En el hackerspace todos queremos apoyarnos. Si te faltan conocimientos específicos para desarrollar tu idea o simplemente
-      quieres validarla con gente que sabe, la puedes platicar con los demás miembros y entre todos podemos aprender y aportar
-      para que todas esas ideas se hagan realidad.
+      En el hackerspace todos queremos apoyarnos. Si te faltan conocimientos
+      específicos para desarrollar tu idea o simplemente quieres validarla con
+      gente que sabe, la puedes platicar con los demás miembros y entre todos
+      podemos aprender y aportar para que todas esas ideas se hagan realidad.
     </p>
   </div>
   <div class="span4">
     <h3>Un espacio para hackers</h3>
     <p class="text-center"><i class="icon-wrench super-icon"></i></p>
     <p>
-      Ninguna idea es mala para nosotros, te gusta la ciencia? te gusta la tecnología? quieres hacer cosas que nadie más entiende?
-      Desarmas cosas para hacer otras? Buscas la manera de darle usos nuevos a las cosas? Prefieres hacer lo tuyo que comprarlo hecho?
+      Ninguna idea es mala para nosotros, ¿te gusta la ciencia? ¿la tecnología? 
+      ¿quiéres hacer cosas que nadie más entiende?
+      ¿Desarmas cosas para hacer otras? 
+      ¿Buscas la manera de darle usos nuevos a las cosas? 
+      ¿Prefieres hacer lo tuyo que comprarlo hecho?
     </p>
     <h5>Únete a nosotros y juntos dominaremos la galaxia!</h5>
     <p>
       <b>Tenemos:</b>
           <ul>
-            <li>Un taller de electrónica</li>
-            <li>Un taller de carpintería</li>
-            <li>Una biblioteca de ciencia, tecnología y ciencia ficción</li>
-            <li>Pizza a veces</li>
+            <li>Un taller de electrónica.</li>
+            <li>Un taller de carpintería.</li>
+            <li>Una biblioteca de ciencia, tecnología y ciencia ficción.</li>
+            <li>Pizza, a veces.</li>
           </ul>
     </p>
   </div>
