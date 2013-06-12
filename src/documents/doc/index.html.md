@@ -1,3 +1,8 @@
+---
+layout: 'default'
+title: 'JavaScript en la actualidad'
+---
+
 # Artículos
 
   * Contacto[1]
