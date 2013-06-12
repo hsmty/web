@@ -1,3 +1,8 @@
+---
+layout: 'default'
+title: 'Microprocesado != Microcontrolador'
+---
+
 # Microprocesador != Microcontrolador 
 ## (No es lo mismo decir arduino que raspberrypi)
 

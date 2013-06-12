@@ -1,3 +1,8 @@
+---
+layout: 'default'
+title: 'Contactando al Hackerspace Monterrey'
+---
+
 # Houston llamando a Marte
 ## Contactando al Hackerspace Monterrey
 
