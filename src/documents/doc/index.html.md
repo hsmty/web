@@ -5,7 +5,7 @@ title: 'JavaScript en la actualidad'
 
 # Artículos
 
-  * Contacto[1]
+  * [Contacto][1]
   * [CPU != Microcontrolador][2]
   * [Javascript hoy][3]
   * [Raspberry Pi][4]
