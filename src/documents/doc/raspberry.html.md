@@ -1,3 +1,8 @@
+---
+layout: 'default'
+title: 'Eden's Raspberry Pi'
+---
+
 # Raspberry pi - Requerimientos de Hardware.
 
 La raspberry pi es una maravilla en cuanto a precio y capacidades, sin embargo
