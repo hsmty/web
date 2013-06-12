@@ -1,6 +1,6 @@
 ---
 layout: 'default'
-title: 'Eden's Raspberry Pi'
+title: "Eden's Raspberry Pi"
 ---
 
 # Raspberry pi - Requerimientos de Hardware.
