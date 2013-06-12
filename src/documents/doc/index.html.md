@@ -1,6 +1,6 @@
 ---
 layout: 'default'
-title: 'JavaScript en la actualidad'
+title: 'Artículos'
 ---
 
 # Artículos
