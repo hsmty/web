@@ -1,0 +1,9 @@
+---
+layout: 'default'
+title: 'Artículos'
+---
+
+# Artículos
+<% for docu in @getCollection("doc").toJSON(): %>
+  * [<%= docu.title %>](<%= docu.url %>)
+<% end %>
