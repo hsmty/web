@@ -65,6 +65,11 @@ docpadConfig = {
       	gallery.push({thumb: @getThumbnail(image.url, "zoomcrop", {w: 300, h: 300}), name: image.basename or image.filename , url: image.url })
       gallery
 	# =================================
+	collections:
+		doc: -> @getCollection("html").findAllLive({relativeOutDirPath: 'doc', basename: $nin: ['index']})
+		.on "add", (model) ->
+			model.setMetaDefaults({layout: 'default', title: model.get("basename")})
+
 	# DocPad Events
 
 	# Here we can define handlers for events that DocPad fires
