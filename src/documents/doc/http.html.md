@@ -3,8 +3,7 @@ layout: 'default'
 title: 'HTTP: El protocolo de la web'
 ---
 
-# HTTP
-### El protocolo de la web
+# HTTP: El protocolo de la web
 
 Este artículo pretende ser una guía a las diferentes partes de HTTP,
 así como una exposición de las funcionalidades menos utilizadas de este,
@@ -38,6 +37,7 @@ opcionalmente, varias características, como la codificación de texto preferida
 etc.)
 
 e.g.
+
 	GET http://example.com/pub/example HTTP/1.1 
 
 
