@@ -4,6 +4,6 @@ title: 'Proyectos'
 ---
 
 # Proyectos realizados o en curso en el  HSMTY
-<% for p in @getCollection("documents").toJSON(): %>
+<% for p in @getCollection("doc").toJSON(): %>
   * [<%= p.title %>](<%= p.url %>)
 <% end %>
