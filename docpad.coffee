@@ -69,6 +69,9 @@ docpadConfig = {
 		doc: -> @getCollection("html").findAllLive({relativeOutDirPath: 'doc', basename: $nin: ['index']})
 		.on "add", (model) ->
 			model.setMetaDefaults({layout: 'default', title: model.get("basename")})
+		proj: -> @getCollection("html").findAllLive({relativeOutDirPath: 'project', basename: $nin: ['index']})
+		.on "add", (model) ->
+			model.setMetaDefaults({layout: 'default', title: model.get("basename")})
 
 	# DocPad Events
 
