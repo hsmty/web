@@ -55,6 +55,10 @@
 					<!-- Everything you want hidden at 940px or less, place within here -->
 					<div class="nav-collapse collapse">
 						<!-- .nav, .navbar-search, .navbar-form, etc -->
+            <ul class="nav" id="menu-nav">
+              <li><a href="/membresias.html" title="Membresias">Membresías</a></li>
+            </ul>
+            
 						<ul class="nav pull-right" id="contact">
 							<li><a href="mailto:general@hsmty.org" title="Escribe un E-mail"><i class="icon-envelope"></i></a></li>
 							<li><a href="http://www.facebook.com/hackerspacemty" title="Síguenos en Facebook"><i class="icon-facebook"></i></a></li>
