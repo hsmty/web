@@ -1,9 +1,10 @@
 ---
 layout: 'default'
-title: 'Ubicación'
+title: 'Membresias'
 ---
 
 #Membresías
+
 Somos una organización sin fines de lucro, ¡pero hay que pagar la renta!
 
 Tenemos dos membresías mensuales disponibles:
