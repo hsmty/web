@@ -18,9 +18,6 @@ La instalacion en cualquier sistema basado en [debian][2] no require mas que una
 ###Uso
 ---
 
-
----
-
 Instalado el programa nos movemos a la ubicacion donde este el archivo del que necesitamos extraer los subtitulos.
 
 Para ver la informacion del archivo ingresamos en la terminal el comando:
