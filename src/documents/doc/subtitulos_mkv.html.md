@@ -35,7 +35,7 @@ Track ID 2: subtitles (S_TEXT/ASS)
 
 Eso nos permitio identificar cual de los Tracks es el de los subtitulos. Para extraerlos utilizaremos el comando:
 
-`$mkvextract tracks _nombre_delarchivo_ _IDtrack:destinoTrack_`
+`$mkvextract tracks nombre_delarchivo IDtrack:destinoTrack`
 
 Se desplegara en la pantalla los siguiente:
 
@@ -44,7 +44,7 @@ Extracting track 2 with the CodecID 'S_TEXT/ASS' to the file 'destinoTrack'. Con
 Progress: 100%
 ```
 
-Ahora si de busca dentro del folder donde estamos trabajando veremos eñ archivo _destinoTrack_.
+Ahora si buscamos dentro del folder donde estamos trabajando veremos el archivo _destinoTrack_.
 
 Listo.
 
