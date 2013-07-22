@@ -1,3 +1,6 @@
+---
+title: 'Extraer subtitulos de un .mkv'
+---
 Para extraer un subtitulo de un archivo matroska _(.mkv)_ desde linux se necesita le herramienta [mkvtoolnix][3]
 
 Esta herramienta contiene dos subprogramas que nos permitiran realizar la tarea:
