@@ -31,21 +31,17 @@ Debemos ver algo como:
 
 `pi@192.168.1.2$ ` _//Esto indica que ya estamos operando directamente sobre la raspi._
 
-![promt][imgpromt]
-
 Estando aqui actualizaremos los repositorios con:
 
 `$sudo apt-get update`
-
-![update][imgupdate]
 
 Una ves actualizados los repositorios installamos el transmission:
 
 `$sudo apt-get install transmission-daemon` //asi de facil.
 
 ![inst1][imginst1]
-
 ![inst2][imginst2]
+
 
 ### Set up
 ---
@@ -115,8 +111,6 @@ Ya con esto tendremos un servidor de descargas listo para funcionar.
 [2]: http://en.wikipedia.org/wiki/Daemon_(computing)
 [imgweb]:
 [imgrem]:
-[imgpromt]:
-[imgupdate]:
 [imginst1]:
 [imginst2]:
 [imgperm]:
