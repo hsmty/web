@@ -1,9 +1,11 @@
 ---
 layout: 'default'
-title: "Eden's Raspberry Pi"
+title: "Requerimientos Hardware - Raspberry Pi"
 ---
 
 # Raspberry pi - Requerimientos de Hardware.
+
+![img1][raspi]
 
 La raspberry pi es una maravilla en cuanto a precio y capacidades, sin embargo
 no solo basta el adquirirla, sino que hay que comprar algunos perifericos y 
@@ -21,6 +23,8 @@ El hardware minimo que debemos tener es:
 * Monitor/Pantalla/Televisión con entrada HDMI o RCA
 * Cable HDMI o RCA macho-macho
 
+![img2][monitor]
+
 ## Interaccion. 
 
 En mi caso estoy usando solo la linea de comandos por lo cual prescindo del 
@@ -37,7 +41,12 @@ mouse.
  * Acceso a Internet. No es fundamental, pero las entradas que estaremos 
    posteando se basan en el acceso remoto a la Raspi.
 
-Estas son una imagen que tome mientras hacia el setup inicial.
+![img2][overall]
 
---
-Edén Candelas
+
+__@elmundoverdees__
+
+[raspi]: /images/blog/rasp1/raspi.jpg "Raspberry"
+[monitor]: /images/blog/rasp1/monitor2.jpg "Monitor"
+[overall]: /images/blog/rasp1/monitor.jpg "Overall"
+
