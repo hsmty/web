@@ -110,8 +110,8 @@ Ya con esto tendremos un servidor de descargas listo para funcionar.
 
 [1]: http://www.transmissionbt.com/
 [2]: http://en.wikipedia.org/wiki/Daemon_(computing)
-[imgweb]:
-[imgrem]:
+[imgweb]: /images/blog/rasp3/web.png "Cliente web"
+[imgrem]: /images/blog/rasp3/remote.png "Remote-Cli"
 [imginst1]: /images/blog/rasp3/inst_transmission.png "Instalacion 1"
 [imginst2]: /images/blog/rasp3/inst_transmission_complete.png "Instalacion 2"
 [imgperm]: /images/blog/rasp3/permisos.png "Permisos"
