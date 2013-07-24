@@ -46,7 +46,7 @@ mouse.
 
 __@elmundoverdees__
 
-[raspi]: /images/blog/rasp1/raspi.jpg "Raspberry"
-[monitor]: /images/blog/rasp1/monitor2.jpg "Monitor"
-[overall]: /images/blog/rasp1/monitor.jpg "Overall"
+[raspi]: /images/blog/rasp1/raspi.JPG "Raspberry"
+[monitor]: /images/blog/rasp1/monitor2.JPG "Monitor"
+[overall]: /images/blog/rasp1/monitor.JPG "Overall"
 
