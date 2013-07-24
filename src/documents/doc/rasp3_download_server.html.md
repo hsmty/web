@@ -111,9 +111,9 @@ Ya con esto tendremos un servidor de descargas listo para funcionar.
 [2]: http://en.wikipedia.org/wiki/Daemon_(computing)
 [imgweb]:
 [imgrem]:
-[imginst1]: https://github.com/hsmty/web/blob/master/src/files/images/blog/rasp3/inst_transmission.png
-[imginst2]: https://github.com/hsmty/web/blob/master/src/files/images/blog/rasp3/inst_transmission_complete.png
-[imgperm]: https://github.com/hsmty/web/blob/master/src/files/images/blog/rasp3/permisos.png
+[imginst1]: https://github.com/hsmty/web/blob/master/src/files/images/blog/rasp3/inst_transmission.png "Instalacion 1"
+[imginst2]: https://github.com/hsmty/web/blob/master/src/files/images/blog/rasp3/inst_transmission_complete.png "Instalacion 2"
+[imgperm]: https://github.com/hsmty/web/blob/master/src/files/images/blog/rasp3/permisos.png "Permisos"
 [imgset1]:
 [imgset2]:
 [imgset3]:
