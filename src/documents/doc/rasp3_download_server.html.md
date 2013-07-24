@@ -79,6 +79,13 @@ Listos los permisos hay que configurar los algunos parametros del transmission, 
 
 `sudo nano /etc/transmission-daemon/settings.json` _//abre el archivo settings.json en el editor de archivos nano_
 
+Del archivo settings.jason modificaremos los sigueintes parametros:
+
+* download-dir - aqui pondremos el path del folder donde se guardaran las descargas completadas en nuestro caso "/home/pi/completed"
+* incomplete-dir - aqui pondremos el path del folder donde se guardaran las descargas en proceso en nuestro caso "/home/pi/progress"
+* incomplete-dir-enable - este campo define si queremos utilizar un directorio especial para los archivos que estan en progreso, como si lo usaremos le damos el valor "true"
+* rpce-whitelist - este parametro indica que ips pueden conectarse a la interface web, en este caso usamos la red en la que esta instalada la raspi (e.i. "192.168.1.*"). // asterisco indica que las ips desde 192.168.1.0 hasta 192.168.1.255 se podran conectar.
+
 ![set1][imgset1]
 
 ![set2][imgset2]
@@ -87,16 +94,9 @@ Listos los permisos hay que configurar los algunos parametros del transmission, 
 
 ![setEnd][imgsetEnd]
 
-Del archivo settings.jason modificaremos los sigueintes parametros:
-
-* download-dir - aqui pondremos el path del folder donde se guardaran las descargas completadas en nuestro caso "/home/pi/completed"
-* incomplete-dir - aqui pondremos el path del folder donde se guardaran las descargas en proceso en nuestro caso "/home/pi/progress"
-* incomplete-dir-enable - este campo define si queremos utilizar un directorio especial para los archivos que estan en progreso, como si lo usaremos le damos el valor "true"
-* rpce-whitelist - este parametro indica que ips pueden conectarse a la interface web, en este caso usamos la red en la que esta instalada la raspi (e.i. "192.168.1.*"). // asterisco indica que las ips desde 192.168.1.0 hasta 192.168.1.255 se podran conectar.
-
 Modificados los parametros guardamos `ctrl-o` y salimos `ctrl-x`, despues de eso recargamos el transmission para que tome las configuraciones. 
 
-`$sudo service transmission-daemon reload` // ojo de usar reload y no restart, ya que restart reinicia los parametros a valores iniciales.
+`$sudo service transmission-daemon reload` _// ojo de usar reload y no restart, ya que restart reinicia los parametros a valores iniciales._
 
 Ya con esto tendremos un servidor de descargas listo para funcionar.
 
