@@ -57,6 +57,7 @@
 						<!-- .nav, .navbar-search, .navbar-form, etc -->
             <ul class="nav" id="menu-nav">
               <li><a href="/membresias.html" title="Membresias">Membresías</a></li>
+              <li><a href="/doc/" title="Blog">Blog</a></li>
             </ul>
             
 						<ul class="nav pull-right" id="contact">
