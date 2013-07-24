@@ -40,6 +40,7 @@ Una ves actualizados los repositorios installamos el transmission:
 `$sudo apt-get install transmission-daemon` //asi de facil.
 
 ![inst1][imginst1]
+
 ![inst2][imginst2]
 
 
