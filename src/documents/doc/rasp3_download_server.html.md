@@ -115,7 +115,9 @@ Ya con esto tendremos un servidor de descargas listo para funcionar.
 [imginst1]: /images/blog/rasp3/inst_transmission.png "Instalacion 1"
 [imginst2]: /images/blog/rasp3/inst_transmission_complete.png "Instalacion 2"
 [imgperm]: /images/blog/rasp3/permisos.png "Permisos"
-[imgset1]:
-[imgset2]:
-[imgset3]:
-[imgsetEnd]:
+[imgset1]: /images/blog/rasp3/setsOri-1.png "Settings 1"
+[imgset2]: /images/blog/rasp3/setsOri-2.png "Settings 2"
+[imgset3]: /images/blog/rasp3/setsOri-3.png "Settings 3"
+[imgsetEnd]: /images/blog/rasp3/setsMod-1.png "Settings Modificados"
+
+
