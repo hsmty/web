@@ -2,7 +2,9 @@
 title: 'Servidor de descargas - RaspberryPi'
 ---
 
-### Introduccion
+# Servidor de descargas
+
+### Introducción
 ---
 
 Para convertir la raspi en un excelente servidor de descargas solo hay que instalar y configurar [Transmission][1].
@@ -25,11 +27,11 @@ Partiremos del punto donde ya se tiene una raspberry configurada (acceso por ssh
 
 Lo que haremos es ingresar por medio de ssh desde la terminal (o atravez de putty en windows) a la ip que le hayamos asignado a nuesto dispositivo (recuerden que debemos tener los equipos en la misma red).
 
-`$ssh pi@192.168.1.2` _//Utilice el usuario pi (default en la raspi) y la ip que le asigne al equipo._
+`$ssh pi@192.168.1.2` _# Utilice el usuario "pi" (default en la raspi) y la ip que le asignó al equipo._
 
 Debemos ver algo como:
 
-`pi@192.168.1.2$ ` _//Esto indica que ya estamos operando directamente sobre la raspi._
+`pi@192.168.1.2$ ` _# Esto es el prompt, que nos indica el host (en este caso la raspi) en el que estamos trabajando._
 
 Estando aqui actualizaremos los repositorios con:
 
@@ -37,7 +39,7 @@ Estando aqui actualizaremos los repositorios con:
 
 Una ves actualizados los repositorios installamos el transmission:
 
-`$sudo apt-get install transmission-daemon` //asi de facil.
+`$sudo apt-get install transmission-daemon`
 
 ![inst1][imginst1]
 
@@ -59,17 +61,17 @@ Ahora va la parte tricky del processo, hay que configurar ciertos permisos para 
 
 Lo primero que aremos es modificarel usuario que tenemos (en este caso __pi__) para que sea parte del grupo creado por el transmission tras su instalacion:
 
-`$sudo usermod -a -G debian-transmission pi` _// se traduce como modifica el usario pi agregandolo al grupo debian-transmission_
+`$sudo usermod -a -G debian-transmission pi` # se traduce como modifica el usario pi agregandolo al grupo debian-transmission_
 
 A las carpetas que creamos hay que agregarlas al grupo debian-transmission para que el transmission pueda acceder y guardar los archivos en ellas.
 
-`$sudo chgrp debian-transmission /home/pi/progress`  _//añade el folder /home/pi/progress al grupo transmission_
+`$sudo chgrp debian-transmission /home/pi/progress`  _# Cambia el grupo del folder /home/pi/progress a transmission_
 
-`$sudo chgrp debian-transmission /home/pi/completed` _//añade el folder /home/pi/completed al grupo transmission_
+`$sudo chgrp debian-transmission /home/pi/completed` _# Cambia el grupo del folder /home/pi/completed a transmission_
 
-`$sudo chmod 770 /home/pi/progress` _//dale permisos de todo al usuario y al grupo del folder /home/pi/progress_
+`$sudo chmod 770 /home/pi/progress` _# Da permisos de lectura, escritura y ejecucion al usuario y al grupo de /home/pi/progress_
 
-`$sudo chmod 770 /home/pi/completed`  _//dale permisos de todo al usuario y al grupo del folder /home/pi/completed_
+`$sudo chmod 770 /home/pi/completed`  _# Hacemos lo mismo para /home/pi/completed_
 
 
 ![permisos][imgperm]
@@ -77,14 +79,15 @@ A las carpetas que creamos hay que agregarlas al grupo debian-transmission para 
 
 Listos los permisos hay que configurar los algunos parametros del transmission, esto se hace en:
 
-`sudo nano /etc/transmission-daemon/settings.json` _//abre el archivo settings.json en el editor de archivos nano_
+`sudo nano /etc/transmission-daemon/settings.json` _# abre el archivo settings.json en el editor de archivos nano_
 
-Del archivo settings.jason modificaremos los sigueintes parametros:
+Del archivo settings.json modificaremos los sigueintes parametros:
 
 * download-dir - aqui pondremos el path del folder donde se guardaran las descargas completadas en nuestro caso "/home/pi/completed"
 * incomplete-dir - aqui pondremos el path del folder donde se guardaran las descargas en proceso en nuestro caso "/home/pi/progress"
 * incomplete-dir-enable - este campo define si queremos utilizar un directorio especial para los archivos que estan en progreso, como si lo usaremos le damos el valor "true"
-* rpce-whitelist - este parametro indica que ips pueden conectarse a la interface web, en este caso usamos la red en la que esta instalada la raspi (e.i. "192.168.1.*"). // asterisco indica que las ips desde 192.168.1.0 hasta 192.168.1.255 se podran conectar.
+* rpce-whitelist - este parametro indica que ips pueden conectarse a la interface web, en este caso usamos la red en la que esta instalada la raspi (e.i. "192.168.1.*").
+  El asterisco indica que las ips desde 192.168.1.0 hasta 192.168.1.255 se podran conectar; una máscara de subred /24
 
 ![set1][imgset1]
 
