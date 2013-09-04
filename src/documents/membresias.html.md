@@ -5,23 +5,34 @@ title: 'Membresias'
 
 #Membresías
 
-Somos una organización sin fines de lucro, ¡pero hay que pagar la renta!
+Somos una organización sin fines de lucro, mantenida mediante
+el pago de membresias y eventos (e.g. cursos y talleres) organizados 
+por los miembros.
+
+Si nos quieres visitar o utilizar el espacio sin ser miembro nos puedes
+contactar através de nuestro canal de IRC o lista de correos.
 
 Tenemos dos membresías mensuales disponibles:
 
-1. Estudiante: MXN$250.00
-2. Completa: MXN$500.00
+1. Estudiante: $250.00 MXN
+2. Hacker: $500.00 MXN
 
-Con esto tienes derecho a:
+Para ser miembro sólo tiene que asistir a una de las juntas oficiales para 
+conocer a los miembros activos y acordar los pagos con nuestro tesorero.
 
-- Todos los cursos y eventos organizados por el Hackerspace sin costo extra.
-- Acceso 24/7 al taller.
-- Acceso a todo el equipo del hackerspace como:
+Después del tercer mes como miembro tienes derecho a:
 
+- Tarifas preferentes para la compra de hardware y materiales.
+- Descuento de 50% en los cursos del Hackespace
+- Acceso al estado financiero del Hackerspace.
+- Voz y voto en las decisiones del grupo.
+- Espacio de almacenamiento.
+- Acceso a el equipo y materiales del Hackerspace, contamos con:
+
+  * Laboratorio de computo.
   * Taller de carpintería.
   * Taller de electrónica.
   * Biblioteca.
-  * Cuenta de usuario en la computadora del HS.
 
-- Acceso al estado financiero del Hackerspace.
-- Voz y voto en las juntas del consejo.
+- Acceso 24/7 al Hackerspace.
+
