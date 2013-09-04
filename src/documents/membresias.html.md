@@ -20,6 +20,12 @@ Tenemos dos membresías mensuales disponibles:
 Para ser miembro sólo tiene que asistir a una de las juntas oficiales para 
 conocer a los miembros activos y acordar los pagos con nuestro tesorero.
 
+En los primeros tres meses como miembro tienes derecho a:
+
+- Tarifas preferentes para la compra de hardware y materiales.
+- Descuento de 20% en los cursos del Hackerspace.
+- Acceso al taller de lunes a sábado de 11 a.m. a 9 p.m.
+
 Después del tercer mes como miembro tienes derecho a:
 
 - Tarifas preferentes para la compra de hardware y materiales.
