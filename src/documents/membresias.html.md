@@ -10,7 +10,7 @@ el pago de membresias y eventos (e.g. cursos y talleres) organizados
 por los miembros.
 
 Si nos quieres visitar o utilizar el espacio sin ser miembro nos puedes
-contactar através de nuestro canal de IRC o lista de correos.
+contactar a través de nuestro canal de IRC o lista de correos.
 
 Tenemos dos membresías mensuales disponibles:
 
@@ -20,25 +20,26 @@ Tenemos dos membresías mensuales disponibles:
 Para ser miembro sólo tiene que asistir a una de las juntas oficiales para 
 conocer a los miembros activos y acordar los pagos con nuestro tesorero.
 
-En los primeros tres meses como miembro tienes derecho a:
+**En los primeros tres meses como miembro tienes derecho a:**
 
 - Tarifas preferentes para la compra de hardware y materiales.
 - Descuento de 20% en los cursos del Hackerspace.
 - Acceso al taller de lunes a sábado de 11 a.m. a 9 p.m.
+- Uso de equipo y materiales en las instalaciones del Hackerspace.
 
-Después del tercer mes como miembro tienes derecho a:
+**Después del tercer mes como miembro tienes derecho a:**
 
-- Tarifas preferentes para la compra de hardware y materiales.
 - Descuento de 50% en los cursos del Hackespace
 - Acceso al estado financiero del Hackerspace.
 - Voz y voto en las decisiones del grupo.
 - Espacio de almacenamiento.
-- Acceso a el equipo y materiales del Hackerspace, contamos con:
+- Acceso 24/7 al Hackerspace.
+- Préstamo de equipo y materiales del Hackerspace.
+
+**Contamos con:**
 
   * Laboratorio de computo.
   * Taller de carpintería.
   * Taller de electrónica.
   * Biblioteca.
-
-- Acceso 24/7 al Hackerspace.
 
