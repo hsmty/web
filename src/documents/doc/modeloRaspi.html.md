@@ -1,8 +1,8 @@
 ---
-title: 'Modelo RaspberryPi --- Raspberry Pi'
+title: 'Modelo RaspberryPi - Raspberry Pi'
 ---
 
-# Modelo RaspberryPi --- Raspberry Pi
+# Modelo RaspberryPi - Raspberry Pi
 
 ---
 
