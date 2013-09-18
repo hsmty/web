@@ -10,7 +10,7 @@ Les dejamos este modelo en [Inventor][1] de la [RaspberryPi][2]
 
 ![Modelo RaspberryPI][img]
 
-![Archivo.iam][file]
+[Archivo.iam][file]
 
 [1]: http://www.autodesk.com/products/autodesk-inventor-family/overview
 [2]: http://www.raspberrypi.org/
