@@ -1,3 +1,3 @@
-Website for the Hackerspace.
+Hackerspace Monterrey Website.
 
-if you don't like it, fork it and make a pull request with your polite suggestions
+Development version of our website.
