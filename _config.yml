@@ -1,0 +1,9 @@
+title:     Hackerspace Monterrey
+url:       http://localhost:4000/
+exclude:   [README.md, LICENSE, Rakefile.rb, Gemfile, Gemfile.lock]
+permalink: /blog/:year/:month/:title
+timezone:  America/Monterrey
+encoding:  UTF-8
+markdown:  redcarpet
+pygments:  true
+future:    false
