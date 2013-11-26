@@ -1,3 +1,43 @@
 @charset 'UTF-8';
 @import 'vars';
 @import 'inuit.css/inuit';
+
+body {
+	@extend .weight--light;
+}
+
+#wrapper {
+	width: 960px;
+	margin: 0 auto;
+}
+
+#content {
+	@extend .grid;
+	@extend .grid--rev;
+}
+
+#main-content {
+	@extend .grid__item;
+	@extend .three-quarters;
+	text-align: justify;
+}
+
+#side-content {
+	@extend .grid__item;
+	@extend .one-quarter;
+}
+
+#irc, #mapa {
+	width: 100%;
+	height: 550px;
+}
+
+#navigation {
+	@extend .nav;
+}
+
+footer {
+	margin-top: 50px;
+	margin-bottom: 10px;
+	text-align: center;
+}

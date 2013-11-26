@@ -8,7 +8,7 @@
 
 ###Usage
 
-Assuming you have RubyGems, install [Bundler](http://bundler.io)
+Assuming you have RubyGems, install [Bundler](http://bundler.io).
 
 	$ gem install bundler
 
@@ -19,6 +19,8 @@ git submodule for [inuitcss](http://inuitcss.com) CSS framework.
 	$ cd hsmty.web
 	$ bundle install
 
-Modify files, do your stuff, then:
+Run the `serve` task from `Rakefile.rb` to serve and watch any changes automatically.
 
 	$ rake serve
+
+Have fun.
