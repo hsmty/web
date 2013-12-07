@@ -4,6 +4,8 @@
 
 body {
 	@extend .weight--light;
+	color: $text-color;
+	background: $background-color;
 }
 
 #wrapper {

@@ -3,3 +3,4 @@ Gemfile.lock
 _vendor
 _site
 .sass-cache
+css/*.css
