@@ -31,6 +31,14 @@ header a:hover
 	@extend .grid__item;
 	@extend .three-quarters;
 	text-align: justify;
+	font-size: 16pt;
+	font-family: serif;
+}
+
+#main-content p,
+#main-content li
+{
+	color: $light-gray;
 }
 
 #side-content {
