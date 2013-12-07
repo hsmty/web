@@ -2,7 +2,7 @@
 layout: default
 title: 'Membresías'
 ---
-#Membresías
+## Membresías
 
 Somos una organización sin fines de lucro, mantenida mediante
 el pago de membresias y eventos (e.g. cursos y talleres) organizados 
@@ -19,14 +19,14 @@ Tenemos dos membresías mensuales disponibles:
 Para ser miembro sólo tiene que asistir a una de las juntas oficiales para 
 conocer a los miembros activos y acordar los pagos con nuestro tesorero.
 
-**En los primeros tres meses como miembro tienes derecho a:**
+#### En los primeros tres meses como miembro tienes derecho a:
 
 - Tarifas preferentes para la compra de hardware y materiales.
 - Descuento de 20% en los cursos del Hackerspace.
 - Acceso al taller de lunes a sábado de 11 a.m. a 9 p.m.
 - Uso de equipo y materiales en las instalaciones del Hackerspace.
 
-**Después del tercer mes como miembro tienes derecho a:**
+#### Después del tercer mes como miembro tienes derecho a:
 
 - Descuento de 50% en los cursos del Hackespace
 - Acceso al estado financiero del Hackerspace.
@@ -35,7 +35,7 @@ conocer a los miembros activos y acordar los pagos con nuestro tesorero.
 - Acceso 24/7 al Hackerspace.
 - Préstamo de equipo y materiales del Hackerspace.
 
-**Contamos con:**
+#### Contamos con:
 
 - Laboratorio de computo.
 - Taller de carpintería.
