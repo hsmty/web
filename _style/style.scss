@@ -8,6 +8,15 @@ body {
 	background: $background-color;
 }
 
+header a,
+header a:visited,
+header a:hover
+{
+	text-decoration: none;
+	color: $text-color;
+	font-family: serif;
+}
+
 #wrapper {
 	width: 960px;
 	margin: 0 auto;
