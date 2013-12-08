@@ -6,3 +6,7 @@ xanchez: {
 	name: 'Pedro Sánchez',
 	email: 'pedro@xanchez.com',
 }
+
+eden {
+	name: 'Edén Candelas',
+}
