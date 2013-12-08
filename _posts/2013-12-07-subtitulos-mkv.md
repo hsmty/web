@@ -7,8 +7,8 @@ Para extraer un subtitulo de un archivo matroska _(.mkv)_ desde linux se necesit
 
 Esta herramienta contiene dos subprogramas que nos permitiran realizar la tarea:
 
-    * __mkvmerge__: Dentro de las opciones que este programa maneja nos lista los tracks de audio y video contenidos en un archivo matroska y los codec utilizados para su creacion.
-    * __mkvextract__: Nos permite extraer cualquiera de los tracks contenidos en el matroska.
+* __mkvmerge__: Dentro de las opciones que este programa maneja nos lista los tracks de audio y video contenidos en un archivo matroska y los codec utilizados para su creacion.
+* __mkvextract__: Nos permite extraer cualquiera de los tracks contenidos en el matroska.
 
 ### Instalación
 
@@ -57,7 +57,7 @@ Extracting track 2 with the CodecID 'S_TEXT/ASS' to the file 'destinoTrack'. Con
 Progress: 100%
 ```
 
-Ahora si buscamos dentro de la carpeta donde estamos trabajando veremos el archivo subs.ass (o cómo lo hayan llamado).
+Ahora si buscamos dentro de la carpeta donde estamos trabajando veremos el archivo subs.ass (o como lo hayan llamado).
 
 Listo.
 
