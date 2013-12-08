@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ page.title }} | {{ site.title }}</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0">
+	<link rel="stylesheet" href="{{ site.url | append: 'css/style.min.css' }}">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+</head>
+<body>
+	<div id="wrapper">
+		<header>
+			<a href="{{ site.url }}">
+				<img src="{{ site.url | append: 'assets/img/logo.png' }}" alt="Our logo :(" />
+				<h1>Hackerspace Monterrey</h1>
+			</a>
+			<ul id="navigation">
+				<li>
+					<a href="{{ site.url | append: 'membresias.html' }}">Membresías</a>
+				</li>
+			</ul>
+		</header>
+		
+		<div id="content">
+			<div id="main-content">

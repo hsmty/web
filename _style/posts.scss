@@ -1,0 +1,21 @@
+.post-list-item {
+	margin-bottom: 50px;
+	border-bottom: 1px solid $text-color;
+	
+	img {
+		@extend .img--round
+	}
+	header {
+		line-height: 20%;
+		
+		p {
+			font-size: 10pt;
+			margin-top: -10px;
+		}
+	}
+	
+	footer {
+		text-align: right;
+		margin-top: -10px;
+	}
+}

@@ -1,5 +1,7 @@
-node_modules/
-out/
 .DS_Store
-status.json
 Thumbs.db
+Gemfile.lock
+_vendor
+_site
+.sass-cache
+css/*.css
