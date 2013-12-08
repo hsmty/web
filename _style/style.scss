@@ -39,7 +39,7 @@ header {
 	@extend .grid__item;
 	@extend .three-quarters;
 	text-align: justify;
-	font-size: 14pt;
+	font-size: 12pt;
 	font-family: 'Donegal One', serif;
 	
 	p, li {
@@ -70,3 +70,16 @@ footer {
 		text-decoration: none;
 	}
 }
+
+code {
+	border: 1px solid #e1e1e8;
+	background-color: #f5f5f5;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 5px;
+	display: block;
+	font-size: 10pt;
+	color: $light-gray;
+	@include vendor(border-radius, 4px);
+}
+
+@import 'posts'

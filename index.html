@@ -2,3 +2,20 @@
 layout: default
 title: 'Principal'
 ---
+{% for post in site.posts %}
+
+{% assign name = site.data.info[post.author].name %}
+{% if name == null %}
+{% assign name = post.author %}
+{% endif %}
+<div class="post-list-item">
+	<header>
+		<a href="{{ post.url }}"><h3>{{ post.title }}</h3></a>
+		<p>Publicado el {{ post.date | date: '%d-%m-%Y' }} por {{ name }}
+	</header>
+	{{ post.excerpt }}
+	<footer>
+		<a href="{{ post.url }}">¿Quiéres saber más?</a>
+	</footer>
+</div>
+{% endfor %}
