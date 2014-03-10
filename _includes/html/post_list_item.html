@@ -1,0 +1,18 @@
+<div class="post-list-item">
+	<header class="post-list-item-header">
+		<a href="{{ post.url }}">
+			<h2>{{ post.title }}</h2>
+		</a>
+		<div class="post-list-item-byline">
+			Publicado el {{ post.date | date: '%d-%m-%Y' }} por {{ name }}
+		</div>
+	</header>
+	
+	<div class="post-list-item-content">
+		{{ post.excerpt }}
+	</div>
+	
+	<footer class="post-list-item-footer">
+		<a href="{{ post.url | prepend: site.url }}">¿Quiéres saber más?</a>
+	</footer>
+</div>

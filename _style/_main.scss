@@ -1,0 +1,112 @@
+body {
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  font-weight: 300;
+  background-color: $background-color;
+  color: $text-color;
+  margin: 10px;
+}
+
+a, a:hover, a:visited {
+  text-decoration: none;
+  color: $link-color;
+}
+
+#wrapper {
+  @include container;
+}
+
+#main-header {
+  a, a:visited, a:hover {
+    color: $text-color;
+  }
+  
+  h1 {
+    display: inline-block;
+    vertical-align: 45px;
+    margin-left: 10px;
+  }
+}
+
+h2 {
+  margin-top: 0px;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: $base-font-family;
+}
+
+#irc, #map {
+  width: 100%;
+  height: 550px;
+}
+
+#main-footer {
+  margin-top: 50px;
+  text-align: center;
+}
+
+nav ul {
+  margin-left: 75px;
+  margin-top: -40px;
+  list-style-type: none;
+  
+  li {
+    display: inline;
+  }
+  
+  li a {
+    padding-left: 5px;
+    padding-right: 5px;
+    border-bottom: 2px solid #DFB04A;
+  }
+  
+  li a:hover, .active-nav {
+    border-bottom: 2px solid #CE574E;
+  }
+}
+
+#content {
+  padding-top: 30px;
+  overflow: hidden;
+  
+  #main-content {
+    @include span-columns(9);
+    img {
+      width: 100%;
+      @include single-box-shadow;
+      @include border-radius(5px);
+    }
+    text-align: justify;
+    font-family: $base-serif-font-family;
+  }
+  
+  #side-content {
+    @include span-columns(3 omega);
+    text-align: right;
+  }
+}
+
+.pagination {
+  overflow: hidden;
+
+  .previous-posts {
+    @include span-columns(3);
+  }
+
+  .recent-posts {
+    @include span-columns(3 omega);
+  }
+}
+
+code {
+  width: 100%;
+  @include force-wrap;
+	border: 1px solid #e1e1e8;
+	background-color: #D7D4CB;
+	padding: 10px;
+	display: block;
+	font-size: 10pt;
+	color: $text-color;
+	@include border-radius(5px);
+}

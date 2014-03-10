@@ -1,9 +1,7 @@
 ---
-layout: 'default'
-title: 'Ubicación'
+layout: page
+title: 'Ubicación del Hackerspace Monterrey'
 ---
-<h1>Ubicación del Hackerspace Monterrey</h1>
-
 <iframe id="map" src="http://mapsengine.google.com/map/embed?mid=zbE9HR0mZh24.kuTYwL-ItL_0" seamless>
 </iframe>
 <br>
