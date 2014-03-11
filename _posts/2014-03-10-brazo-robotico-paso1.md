@@ -33,6 +33,6 @@ Y este ultimo link muestra el video de la primera prueba.
  **__@elmundoverdees__**
 
 [1]: http://youtu.be/qByaTxZ2sZg
-[img1]: /assets/post_img/brazo/original "Brazo"
-[img2]: /assets/post_img/brazo/puenteh "Puente H"
-[img3]: /assets/post_img/brazo/brazoPuente "Ensamble"
+[img1]: /assets/post_img/brazo/original.jpg "Brazo"
+[img2]: /assets/post_img/brazo/puenteh.jpg "Puente H"
+[img3]: /assets/post_img/brazo/brazoPuente.jpg "Ensamble"
