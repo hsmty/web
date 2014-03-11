@@ -97,6 +97,7 @@ nav ul {
 
   .recent-posts {
     @include span-columns(3 omega);
+    text-align: right;
   }
 }
 
