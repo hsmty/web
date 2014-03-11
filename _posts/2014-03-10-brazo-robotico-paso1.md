@@ -1,3 +1,11 @@
+---
+layout: post
+title: 'Brazo robotico - Paso 1'
+author: eden
+excerpt: 'Resulto ser que el famoso brazo de steren solo es una serie de motores, cables y engranes astutamente conectados que permiten al usuario el controlar el brazo a traves de interruptores en un control.
+'
+---
+
 #Brazo robótico
 
 Resulto ser que el famoso brazo de steren solo es una serie de motores, cables y engranes astutamente conectados que permiten al usuario el controlar el brazo a traves de interruptores en un control.
@@ -21,6 +29,8 @@ La siguiente imagen es el arreglo previo al montaje:
 Y este ultimo link muestra el video de la primera prueba.
 
  [Prueba][1]
+
+ **__@elmundoverdees__**
 
 [1]: http://youtu.be/qByaTxZ2sZg
 [img1]: /assets/post_img/brazo/original "Brazo"
