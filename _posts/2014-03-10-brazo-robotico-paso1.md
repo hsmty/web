@@ -6,8 +6,6 @@ excerpt: 'Resulto ser que el famoso brazo de steren solo es una serie de motores
 '
 ---
 
-#Brazo robótico
-
 Resulto ser que el famoso brazo de steren solo es una serie de motores, cables y engranes astutamente conectados que permiten al usuario el controlar el brazo a traves de interruptores en un control.
 
 ![original][img1]
