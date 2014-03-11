@@ -26,7 +26,7 @@ La siguiente imagen es el arreglo previo al montaje:
 
 Y este ultimo link muestra el video de la primera prueba.
 
- [Prueba][1]
+ [Video 1 - Brazo robotico][1]
 
  **__@elmundoverdees__**
 
