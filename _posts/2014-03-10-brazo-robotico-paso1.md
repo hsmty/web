@@ -24,7 +24,7 @@ Aqui se muestra el circuito montado en *proto*:
 
 La siguiente imagen es el arreglo previo al montaje:
 
-![Ensamble][img2]
+![Ensamble][img3]
 
 Y este ultimo link muestra el video de la primera prueba.
 
