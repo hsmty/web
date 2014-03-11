@@ -73,7 +73,8 @@ nav ul {
   #main-content {
     @include span-columns(9);
     img {
-      width: 100%;
+      width: 95%;
+      margin-left: 20px;
       @include single-box-shadow;
       @include border-radius(5px);
     }
@@ -102,7 +103,7 @@ nav ul {
 code {
   width: 100%;
   @include force-wrap;
-	border: 1px solid #e1e1e8;
+	border: 1px solid #E1E1E8;
 	background-color: #D7D4CB;
 	padding: 10px;
 	display: block;

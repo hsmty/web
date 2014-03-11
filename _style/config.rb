@@ -7,3 +7,4 @@ css_dir = '../css'
 images_dir = '../assets/img'
 
 output_style = :compressed
+disable_warnings = true
