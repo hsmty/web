@@ -3,26 +3,31 @@
 <head>
 	<title>{{ page.title }} | {{ site.title }}</title>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, minimum-scale=1.0">
-	<link rel="stylesheet" href="{{ site.url | append: 'css/style.min.css' }}">
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+	<link rel="stylesheet" href="{{ '/css/style.css' | prepend: site.url }}" type="text/css">
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" type="text/css">
 </head>
+
 <body>
 	<div id="wrapper">
-		<header>
+		<header id="main-header">
 			<a href="{{ site.url }}">
-				<img src="{{ site.url | append: 'assets/img/logo.png' }}" alt="Our logo :(" />
-				<h1>Hackerspace Monterrey</h1>
+				<img src="{{ '/assets/img/logo.png' | prepend: site.url }}" alt="Our logo :(" />
+				<h1>{{ site.title }}</h1>
 			</a>
-			<ul id="navigation">
-				<li>
-					<a href="{{ site.url | append: 'que_es.html' }}">¿Qué es?</a>
-				</li>
-				<li>
-					<a href="{{ site.url | append: 'membresias.html' }}">Membresías</a>
-				</li>
-			</ul>
+			<nav>
+				<ul>
+					{% assign url = page.url | remove: 'index.html' %}
+					<li>
+						<a {% if url == '/' or url contains 'blog' %} class="active-nav" {% endif %} href="{{ site.url }}">Blog</a>
+					</li>
+					{% for link in site.data.navigation %}
+					<li>
+						<a {% if url == link.url %} class="active-nav" {% endif %}href="{{ link.url | prepend: site.url }}">{{ link.name }}</a>
+					</li>
+					{% endfor %}
+				</ul>
+			</nav>
 		</header>
-		
+
 		<div id="content">
 			<div id="main-content">

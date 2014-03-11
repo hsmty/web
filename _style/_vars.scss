@@ -1,12 +1,15 @@
-$base-font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
-$base-font-size: 12pt;
-$brand-round: 6px;
-$use-grids: true;
-$use-greybox: true;
-$use-split: true;
-$use-nav: true;
+@import url(http://fonts.googleapis.com/css?family=Kreon:300,400,700|PT+Serif:400italic,400,700italic,700);
 
-$background-color: #EEE;
-$text-color: #333;
+$base-font-family: 'Helvetica', sans-serif;
+$base-serif-font-family: 'Kreon', serif;
+$base-font-size: 13pt;
+$background-color: #ECE7E1;
+$text-color: #1F0525;
+$link-color: #B06944;
 
-$light-gray: #555;
+/* Susy variables */
+$total-columns: 12;
+$column-width: 4rem;
+$gutter-width: 1rem;
+$grid-padding: $gutter-width / 2;
+$container-style: magic;

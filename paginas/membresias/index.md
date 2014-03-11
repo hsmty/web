@@ -1,11 +1,9 @@
 ---
-layout: default
+layout: page
 title: 'Membresías'
 ---
-## Membresías
-
 Somos una organización sin fines de lucro, mantenida mediante
-el pago de membresias y eventos (e.g. cursos y talleres) organizados 
+el pago de membresías y eventos (e.g. cursos y talleres) organizados 
 por los miembros.
 
 Si nos quieres visitar o utilizar el espacio sin ser miembro nos puedes

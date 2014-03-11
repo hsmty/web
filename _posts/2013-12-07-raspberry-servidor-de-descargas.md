@@ -2,10 +2,7 @@
 layout: post
 title: 'Servidor de descargas - RaspberryPi'
 author: eden
-excerpt: 'Transmission cumple con todo lo necesario para ser considerado el mejor cliente de torrents en linux, su consumo de memoria es muy bajo, usa muy poco procesamiento y su uso es muy intuitivo; lo que lo llevo a ser usado por Ubuntu como app default de torrents ademas que compañías comerciales (FON y Belkin) lo utilizan en sus productos y nosotros lo tenemos al alcance de un apt-get install.'
 ---
-### Introducción
-
 Para convertir la raspi en un excelente servidor de descargas solo hay que instalar y configurar [Transmission][1].
 
 Transmission cumple con todo lo necesario para ser considerado el mejor cliente de torrents en linux, su consumo de memoria es muy bajo, usa muy poco procesamiento y su uso es muy intuitivo; lo que lo llevo a ser usado por Ubuntu como app default de torrents ademas que compañías comerciales (FON y Belkin) lo utilizan en sus productos y nosotros lo tenemos al alcance de un apt-get install.
