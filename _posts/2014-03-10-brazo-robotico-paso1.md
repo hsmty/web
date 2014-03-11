@@ -2,11 +2,16 @@
 layout: post
 title: 'Brazo robotico - Paso 1'
 author: eden
-excerpt: 'Resulto ser que el famoso brazo de steren solo es una serie de motores, cables y engranes astutamente conectados que permiten al usuario el controlar el brazo a traves de interruptores en un control.
+excerpt: 'Resultó ser que el famoso brazo de Steren es solo un conjunto de motores, cables y engranes astutamente conectados de tal manera que permiten al usuario el controlar el brazo a traves de interruptores fijados a una caja plástica.
 '
 ---
 
-Resulto ser que el famoso brazo de steren solo es una serie de motores, cables y engranes astutamente conectados que permiten al usuario el controlar el brazo a traves de interruptores en un control.
+Al investigar el funcionaminento del famoso brazo robótico de Steren, reusultó
+ser un conjunto de motores, cables y engranes astutamente conectados de tal
+manera que permiten al usuario controlar el brazo a través de interruptores 
+fijados a una caja plástica, el interruptor sólo provee energía directamente al
+motor y para revertir la dirección sólo es un segundo interruptor que conecta la
+potencia al motor con la polaridad invertida.
 
 ![original][img1]
 
