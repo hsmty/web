@@ -1,0 +1,24 @@
+.post-list-item {
+  margin-bottom: 50px;
+  border-bottom: 1px solid #CAC5C5;
+  
+  h2 {
+    margin: 0px;
+  }
+}
+
+.post-list-item-header {
+  a, a:visited, a:hover {
+    color: $text-color;
+  }
+}
+
+.post-list-item-byline {
+  font-size: 11pt;
+}
+
+.post-list-item-footer {
+  text-align: right;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}

@@ -4,23 +4,24 @@
 
 - Ruby
 - RubyGems
+- Rake
 - Bundler
 
 ###Usage
 
-Assuming you have RubyGems, install [Bundler](http://bundler.io).
+Assuming you have RubyGems, install [Rake](http://rake.rubyforge.org) and
+[Bundler](http://bundler.io).
 
-	$ gem install bundler
+	$ gem install rake bundler
 
-Now clone the repository, the `--recursive` directive is used to also clone the
-git submodule for [inuitcss](http://inuitcss.com) CSS framework.
+Now clone the repository.
 
-	$ git clone --recursive https://github.com/hsmty/web.git hsmty.web
+	$ git clone https://github.com/hsmty/web.git hsmty.web
 	$ cd hsmty.web
 	$ bundle install
 
-Run the `serve` task from `Rakefile.rb` to serve and watch any changes automatically.
+Run the `rake` command to serve and watch any changes you make automatically.
 
-	$ rake serve
+	$ rake
 
 Have fun.

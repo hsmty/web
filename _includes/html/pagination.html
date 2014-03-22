@@ -1,0 +1,14 @@
+{% if paginator.total_pages > 1 %}
+<div class="pagination">
+	<div class="previous-posts">
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Entradas anteriores</a>
+  {% endif %}
+	</div>
+	<div class="recent-posts">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">Entradas recientes &raquo;</a>
+  {% endif %}
+	</div>
+</div>
+{% endif %}
