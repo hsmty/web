@@ -111,8 +111,9 @@ code {
   background-color: #D7D4CB;
   padding: 10px;
   display: block;
-  font-size: 10pt;
+  font-size: 11pt;
   color: $text-color;
+  font-family: $base-code-font-family;
   @include border-radius(5px);
 }
 
