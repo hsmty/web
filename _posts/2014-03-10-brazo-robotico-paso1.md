@@ -31,11 +31,10 @@ La siguiente imagen es el arreglo previo al montaje:
 
 Y este ultimo link muestra el video de la primera prueba.
 
- [Video 1 - Brazo robotico][1]
+<iframe class="youtube" width="640" height="360" src="//www.youtube-nocookie.com/embed/qByaTxZ2sZg" frameborder="0" allowfullscreen></iframe>
 
  **__@elmundoverdees__**
 
-[1]: http://youtu.be/qByaTxZ2sZg
 [img1]: /assets/post_img/brazo/original.jpg "Brazo"
 [img2]: /assets/post_img/brazo/puenteh.jpg "Puente H"
 [img3]: /assets/post_img/brazo/brazoPuente.jpg "Ensamble"

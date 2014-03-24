@@ -3,12 +3,7 @@ layout: default
 title: 'Principal'
 ---
 {% for post in paginator.posts %}
-
-{% assign name = site.data.info[post.author].name %}
-{% if name == null %}
-{% assign name = post.author %}
-{% endif %}
-{% include html/post_list_item.html post=post %}
+	{% include html/post_list_item.html post=post %}
 {% endfor %}
 
 {% include html/pagination.html %}

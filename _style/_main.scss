@@ -69,15 +69,18 @@ nav ul {
 #content {
   padding-top: 30px;
   overflow: hidden;
-  
+
   #main-content {
     @include span-columns(9);
+    
     img {
+      display: block;
+      margin: auto;
       width: 95%;
-      margin-left: 20px;
       @include single-box-shadow;
       @include border-radius(5px);
     }
+    
     text-align: justify;
     font-family: $base-serif-font-family;
   }
@@ -102,13 +105,18 @@ nav ul {
 }
 
 code {
-  width: 100%;
-  @include force-wrap;
-	border: 1px solid #E1E1E8;
-	background-color: #D7D4CB;
-	padding: 10px;
-	display: block;
-	font-size: 10pt;
-	color: $text-color;
-	@include border-radius(5px);
+  white-space: pre-wrap;
+  text-align: left;
+  border: 1px solid #E1E1E8;
+  background-color: #D7D4CB;
+  padding: 10px;
+  display: block;
+  font-size: 10pt;
+  color: $text-color;
+  @include border-radius(5px);
+}
+
+.youtube {
+  display: block;
+  margin: auto;
 }

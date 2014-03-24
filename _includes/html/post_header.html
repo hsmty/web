@@ -1,0 +1,12 @@
+	<header class="post-list-item-header">
+		<a href="{{ include.post.url }}">
+			<h2>{{ include.post.title }}</h2>
+		</a>
+		<div class="post-list-item-byline">
+			{% assign name = site.data.info[include.post.author].name %}
+			{% if name == null %}
+			{% assign name = include.post.author %}
+			{% endif %}
+			Publicado el {{ include.post.date | date: '%d-%m-%Y' }} por {{ name }}
+		</div>
+	</header>

@@ -1,15 +1,15 @@
 .post-list-item {
   margin-bottom: 50px;
   border-bottom: 1px solid #CAC5C5;
-  
-  h2 {
-    margin: 0px;
-  }
 }
 
 .post-list-item-header {
   a, a:visited, a:hover {
     color: $text-color;
+  }
+
+  h2 {
+    margin: 0px;
   }
 }
 

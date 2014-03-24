@@ -7,7 +7,7 @@ el pago de membresías y eventos (e.g. cursos y talleres) organizados
 por los miembros.
 
 Si nos quieres visitar o utilizar el espacio sin ser miembro nos puedes
-contactar a través de nuestro canal de IRC o lista de correos.
+contactar a través de nuestro canal de [IRC](http://hsmty.org/paginas/irc).
 
 Tenemos dos membresías mensuales disponibles:
 
