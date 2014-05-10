@@ -1,0 +1,29 @@
+---
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title>{{ site.title }}</title>
+	<link href="{{ site.url }}"/>
+	<updated>{{ site.time | date_to_xmlschema }}</updated>
+	<id>{{ site.url }}/</id>
+	<author>
+		<name>{{ site.data.info.hsmty.name }}</name>
+	</author>
+
+	{% for post in site.posts limit:10 %}
+	<entry>
+		<author>
+			{% assign name = site.data.info[post.author].name %}
+			{% if name == null %}
+			{% assign name = post.author %}
+			{% endif %}
+			<name>{{ name }}</name>
+		</author>
+		<title>{{ post.title }}</title>
+		<link href="{{ post.url | prepend: site.url }}"/>
+		<id>{{ post.url | prepend: site.url }}</id>
+		<updated>{{ post.date | date_to_xmlschema }}</updated>
+		<content type="html">{{ post.content | markdownify | xml_escape }}</content>
+	</entry>
+	{% endfor %}
+</feed>
