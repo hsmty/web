@@ -1,4 +1,6 @@
-- name: "¿Qué es?"
-  url: /paginas/que-es/
-- name: "Membresías"
-  url: /paginas/membresias/
+-
+    name: "¿Qué es?"
+    url: /paginas/que-es/
+-
+    name: "Membresías"
+    url: /paginas/membresias/

@@ -1,16 +1,16 @@
 hsmty: {
-        name: 'Hackerspace Monterrey',
+    name: 'Hackerspace Monterrey',
 }
 
 xanchez: {
-	name: 'Pedro Sánchez',
-	email: 'pedro@xanchez.com',
+    name: 'Pedro Sánchez',
+    email: 'pedro@xanchez.com',
 }
 
 eden: {
-	name: 'Edén Candelas',
+    name: 'Edén Candelas',
 }
 
 rdleon: {
-        name: 'Rafael Díaz de León',
+    name: 'Rafael Díaz de León',
 }
