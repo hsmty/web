@@ -4,3 +4,6 @@
 -
     name: "Membresías"
     url: /paginas/membresias/
+-
+    name: "Cursos"
+    url: /paginas/cursos/
