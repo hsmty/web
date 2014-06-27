@@ -132,4 +132,6 @@ El codigo completo:
     puts "Grabando archivo #{FACTURA_FNAME}."
     {% endhighlight %}
 
+*(Por [@edmz](https://twitter.com/edmz "edmz"))*
+
   [1]: http://docs.seattlerb.org/mechanize/
