@@ -59,8 +59,8 @@ de usuario y password, en este caso "User" y "Password".
 Llenar y enviar el formulario se convierte simplemente en este codigo:
 
 
-    ```ruby
-  
+    {% highlight ruby %}
+    
     LOGIN_FORM_ACTION = 'https://www.gnmextranet2.com/PortalSGC/Login.aspx'
   
     form = form_with(action: LOGIN_FORM_ACTION)
@@ -68,7 +68,8 @@ Llenar y enviar el formulario se convierte simplemente en este codigo:
     form.field_with(name: "Password").value     = 'mipassword'
     nueva_pagina = form.click_button
   
-    ```
+    {% endhighlight %}
+    
 
 Al momento de ejecutar click_button(), estamos efectivamente haciendo que 
 el "navegador" de Mechanize avance a la siguiente pagina, la cual capturamos
@@ -83,11 +84,11 @@ solamente habria que hacer click a la factura para luego grabarla.
 
 Eso mismo haremos con la ayuda de Mechanize.
 
-    ```ruby
+    {% highlight ruby %}
   
     nueva_pagina.iframe_with(name: "oFacturaPDF").click.save(NOMBRE_QUE_LE_QUEREMOS_PONER_A_LA_DESCARGA)
     
-    ```
+    {% endhighlight %}
 
 Y listo. En tan solo unos clics hemos automatizado el proceso de
 descargar el PDF de tu factura mas reciente de Gas Natural. Algo quiza
@@ -104,7 +105,7 @@ menos para mi, tiene un flujo facil de leer.
 
 El codigo completo:
 
-    ```ruby
+    {% highlight ruby %}
     require "mechanize"
     require "date"
     require "logger" if ENV['DEBUG']
@@ -129,6 +130,6 @@ El codigo completo:
       form.field_with(name: "Password").value = password
     end.click_button.iframe_with(name:"oFacturaPDF").click.save(FACTURA_FNAME)
     puts "Grabando archivo #{FACTURA_FNAME}."
-    ```
+    {% endhighlight %}
 
   [1]: http://docs.seattlerb.org/mechanize/
