@@ -21,8 +21,8 @@ entrevista muy importante y obviamente no tienes un respaldo. _ddrescue_ to the 
 ##[_Lasciate ogni speranza, voi ch'entrate._](https://www.google.com/?gws_rd=ssl#q=lasciate+ogni+speranza+voi+ch'entrate)
 Hay que ser muy claros desde el principio, __no hay garantía de que se pueda recuperar
 información de un disco dañado__, al menos no con las técnicas que están accesibles
-a cualquiera con una computadora y que se mostrarán aqui. Existen métodos muy
-avanzados que utilizan equipo muy especializado, pero son **muy** caros.
+a cualquiera con una computadora y que se mostrarán aqui. Existen métodos avanzados
+que utilizan equipo especializado, pero son **muy** caros.
 
 [Lifehacker tiene un buen artículo sobre recuperación de datos](http://lifehacker.com/5982339/diy-data-recovery-tricks-for-when-your-hard-drive-goes-belly-up)
 con mucha información relevante.
@@ -30,7 +30,7 @@ con mucha información relevante.
 ##El proceso a grandes rasgos
 Afortunadamente, el daño del disco no era grave y aproveché para actualizar a un SSD.
 
-En mi caso, la historia se desenvolvió asi
+En mi caso, la historia se desenvolvió asi:
 
 * [_Diagnóstico_](#diagnostico)
 
@@ -87,7 +87,7 @@ la partición que queremos recuperar.
 Afortunadamente, el dispositivo si se reconoce, y regresa información completa de
 identificación y particiones, pero no es posible acceder a los archivos.
 
-__Conclusión:__ Si hay daño físico. Todo indica que no es tan extenso.
+__Conclusión:__ Sí hay daño físico. Todo indica que no es tan extenso.
 
 __Solución:__ Cambiar el disco duro. En este caso compramos un disco SSD nuevo e
 instalamos Mac OS X 10.10. Hay que reconfigurar todo el software como
@@ -156,7 +156,7 @@ recuperar alrededor de 750KB. 99.54% de recuperación.
 16h después y con un archivo de 160Gb en mi computadora, vamos a tratar de diagnosticar
 el daño a los datos. El disco duro podemos guardarlo por si se necesita volver a
 correr el proceso. __Desconecta el disco duro en este paso para evitar correr comandos
-sobre él__
+sobre él__.
 
 En primer lugar, hay que tratar de montar el sistema de archivos. En una Mac, un
 simple "doble click" debería funcionar en la mayoría de los caso, lo cual obviamente
@@ -164,7 +164,7 @@ no ocurrió.
 
 Después de tratar de reparar el disco usando _Disk Utility_ sin resultados, decidí
 usar fsck para obtener más información. Pero hay un pequeño detalle en OSX: __fsck__ __no funciona
-sobre archivos normales, es necesario usar un dispositivo de bloque__
+sobre archivos normales, es necesario usar un dispositivo de bloque__.
 
 Hay que indicar al sistema que vamos a crear un archivo de bloques a partir de un
 archivo en el sistema de archivos. Confuso?
@@ -184,11 +184,11 @@ $ fsck_hfs -f -y /dev/disk1
 Una vez que este comando termina, si acaso llega a terminar sin errores, podremos
 montar el sistema de archivos y leer la información que buscamos.
 
-__Conclusión:__ Descubrir que hay que usar _hdid_ para crear un archivo de bloques
-para el kernel es una verdadera revelación. Además la opción _-nomount_ es la que
-nos permite ejecutar el comando sin errores, ya que de otra forma OSX trata de acceder
-al sistema de archivos automáticamente, lo cual no puede hacer porque está dañado... y todo
-el comando falla.
+En mi caso, la reparación aún era incompleta, pero suficiente para obtener los
+archivos específicos que nos interesaban.
+
+__Conclusión:__ Descubrir que hay que usar _hdid_ con la opción _-nomount_para
+crear un archivo de bloques para el kernel es una verdadera revelación. 
 
 __Solución:__ Escribir un post en el blog para documentar esto.
 
@@ -196,7 +196,7 @@ __Solución:__ Escribir un post en el blog para documentar esto.
 Tenemos los datos, ya reparamos el sistema de archivos. Pero montar la imagen
 de disco con un doble click no es posible aún. La imagen presenta datos perdidos y
 otros problemas que evitan su funcionamiento normal. Pero no hay que temer, podemos
-montar el sistema de archivos en modo de sólo lectura, sólo para poder sacar la 
+montar el sistema de archivos en modo de sólo lectura, y acceder la 
 información que necesitamos recuperar.
 
 ~~~~ bash
