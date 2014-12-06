@@ -10,6 +10,8 @@ Esta herramienta contiene dos subprogramas que nos permitiran realizar la tarea:
 * __mkvmerge__: Dentro de las opciones que este programa maneja nos lista los tracks de audio y video contenidos en un archivo matroska y los codec utilizados para su creacion.
 * __mkvextract__: Nos permite extraer cualquiera de los tracks contenidos en el matroska.
 
+<!--more-->
+
 ### Instalación
 
 
