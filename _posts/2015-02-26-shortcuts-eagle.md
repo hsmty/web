@@ -26,8 +26,8 @@ Al acceder vemos que nos muestra tres secciones, una donde seleccionamos la tecl
 
 En el area de los comandos se nos es permitido concatenar comandos y sus opciones, los comandos son separados por ";", las opciones de los mismos por " " (espacios).
 
-En este caso para lo que se visualiza en el editor de layouts se utiliza el comando "display". Diplay permite activar layers si estos se añaden como opcion. De esta forma 
-*display 1 17 18 20* 
+En este caso para lo que se visualiza en el editor de layouts se utiliza el comando "display". Display permite activar layers si estos se añaden como opcion. De esta forma 
+’display 1 17 18 20 ’
 nos mostrara el layer 1 (top), 17 (pads), 18 (vias) y 20 (dimension).
 
 El comando por si solo añadira esos layers en el area de visualizacion. Si queremos remover ciertos layer anteponemos "-" al numero del layer. Asi 
