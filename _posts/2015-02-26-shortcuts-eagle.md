@@ -26,6 +26,8 @@ Al acceder vemos que nos muestra tres secciones, una donde seleccionamos la tecl
 
 En el area de los comandos se nos es permitido concatenar comandos y sus opciones, los comandos son separados por ";", las opciones de los mismos por " " (espacios).
 
+###El comando: DISPLAY
+
 En este caso para lo que se visualiza en el editor de layouts se utiliza el comando "display". Display permite activar layers si estos se añaden como opcion. De esta forma 
 `display 1 17 18 20`
 nos mostrara el layer 1 (top), 17 (pads), 18 (vias) y 20 (dimension).
@@ -43,6 +45,8 @@ Por ultimo
 mostrara todo el contenido de todos los layers. (poco recomendable).
 ![img2][complete]
 
+###Las secuencias: Ctrl-1 y Ctrl-4
+
 En este caso asigno a la secuencia Ctrl-1 (^1) los comandos 
 `display none; display 1 17 18 20 21 23 25 51`
 para mostrar en pantalla el layer superior.
@@ -55,6 +59,8 @@ Para visualizar el layer inferior utilizo Ctrl-4(^4) con los comandos
 ![img2][bottomCmd]
 
 Hay una razon por la que salte del 1 al 4, los diseños que estoy realizando actualmente requieren 4 layers, asi asigno las teclas 2 y 3 a la visualizacion de los layers intermedios.
+
+Hay que tener en cuenta que las secuencias de teclas a asignar no esten dadas de alta previamente o que la secuencia sea usada por el sistema operativo en alguna otra accion.
 
 Tambien cabe destacar que los comandos se pueden teclear directamente en la barra de comandos y obtener el mismo resultado.
 
