@@ -4,9 +4,9 @@ title: "Layer Shortcuts - Eagle"
 author: Edén Candelas
 ---
 
-![img1][all]
+##EAGLE TIPS - Atajos de teclado.
 
-EAGLE TIPS  Atajos de teclado.
+![img1][all]
 
 Cuando se empieza a utilizar eagle de forma continua nos vemos en la necesidad de automatizar ciertos procesos repetitivos para aumentar la velocidad con la que trabajamos, esto lo logramos mediante atajos de teclado (keyboard shortcuts).
 
@@ -41,6 +41,7 @@ quitara el contenido de todos los layers.
 Por ultimo
 `display all`
 mostrara todo el contenido de todos los layers. (poco recomendable).
+![img2][complete]
 
 En este caso asigno a la secuencia Ctrl-1 (^1) los comandos 
 `display none; display 1 17 18 20 21 23 25 51`
@@ -57,11 +58,15 @@ Hay una razon por la que salte del 1 al 4, los diseños que estoy realizando act
 
 Tambien cabe destacar que los comandos se pueden teclear directamente en la barra de comandos y obtener el mismo resultado.
 
+Edén
+@elmundoverdees
+
 
 [all]: /assets/post_img/eagle/all.png  "all"
 [menuPath]: /assets/post_img/eagle/  "menuPath" 
 [assignEnv]: /assets/post_img/eagle/assignEnv.png  "assignEnv"
 [assignNew]: /assets/post_img/eagle/assignNew.png  "assignNew"
+[complete]: /assets/post_img/eagle/complete.png  "complete"
 [topCmd]: /assets/post_img/eagle/topCmd.png  "topCmd"
 [bottomCmd]: /assets/post_img/eagle/bottomCmd.png  "bottomCmd"
 
