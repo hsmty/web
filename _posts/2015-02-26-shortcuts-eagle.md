@@ -27,35 +27,29 @@ Al acceder vemos que nos muestra tres secciones, una donde seleccionamos la tecl
 En el area de los comandos se nos es permitido concatenar comandos y sus opciones, los comandos son separados por ";", las opciones de los mismos por " " (espacios).
 
 En este caso para lo que se visualiza en el editor de layouts se utiliza el comando "display". Diplay permite activar layers si estos se añaden como opcion. De esta forma 
-'display 1 17 18 20' 
+*display 1 17 18 20* 
 nos mostrara el layer 1 (top), 17 (pads), 18 (vias) y 20 (dimension).
 
 El comando por si solo añadira esos layers en el area de visualizacion. Si queremos remover ciertos layer anteponemos "-" al numero del layer. Asi 
-'''
-display -16 -22 -24
-''' 
+*display -16 -22 -24* 
 remueve del area de visualizacion los layers 16 (bottom), 22 (bPlace) y 24 (bOrigins).
 
 Otra opcion de remover los layers que no necesitamos es mediante la opcion "none", asi 
-'''
-display none
-''' 
+*display none* 
 quitara el contenido de todos los layers.
 
 Por ultimo
-'''
-display all
-''' 
+*display all* 
 mostrara todo el contenido de todos los layers. (poco recomendable).
 
 En este caso asigno a la secuencia Ctrl-1 (^1) los comandos 
-'''display none; display 1 17 18 20 21 23 25 51 ''' 
+*display none; display 1 17 18 20 21 23 25 51*
 para mostrar en pantalla el layer superior.
 
 ![img2][topCmd]
 
 Para visualizar el layer inferior utilizo Ctrl-4(^4) con los comandos 
-''' display none; display 16 17 18 20 22 24 26 52'''
+*display none; display 16 17 18 20 22 24 26 52*
 
 ![img2][bottomCmd]
 
