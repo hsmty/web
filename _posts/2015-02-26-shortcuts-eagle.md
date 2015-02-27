@@ -58,7 +58,7 @@ Para visualizar el layer inferior utilizo Ctrl-4(^4) con los comandos
 
 ![img2][bottomCmd]
 
-[a link](https://vine.co/v/O2rnwOF3P6H)
+Como se ve esto en *real time* -> [vine](https://vine.co/v/O2rnwOF3P6H)
 
 Hay una razon por la que salte del 1 al 4, los diseños que estoy realizando actualmente requieren 4 layers, asi asigno las teclas 2 y 3 a la visualizacion de los layers intermedios.
 
