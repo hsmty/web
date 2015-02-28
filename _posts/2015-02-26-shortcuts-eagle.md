@@ -8,6 +8,7 @@ author: Edén Candelas
 
 ![img1][all]
 
+<!-- more -->
 Cuando se empieza a utilizar eagle de forma continua nos vemos en la necesidad de automatizar ciertos procesos repetitivos para aumentar la velocidad con la que trabajamos, esto lo logramos mediante atajos de teclado (keyboard shortcuts).
 
 
