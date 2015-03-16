@@ -139,6 +139,13 @@ Al listar el contenido de la carpeta debemos tener algo asi:
 
 *ahora continuaremos con la compilacion.*
 
+Obtener el archivo que cargaremos al avr consiste en tres pasos. 
+1 generar el archivo objeto (*file.o*).
+2 usando el archivo objeto generar el archivo elf (*file.elf*)
+3 extraemos cierts seccions del archivo elf para generar el archivo hex que es el que cargaremos al AVR.
+
+Pasos:
+
 * Invocamos avr-gcc con el siguiente comando:
 `avr-gcc -g -Os -Wall -DF_CPU=1000000L -mmcu=attiny85 -c hello.c -o hello.o`
 
@@ -150,10 +157,29 @@ Al listar el contenido de la carpeta debemos tener algo asi:
 > -c es el archivo a compilar
 > -o el archivo que generaremos
 
-Tenemos que tener un nuevo archivo hello.o en nuestro directorio
+Obtendremos el archivo hello.o en nuestro directorio
 
 ![img][helloObj]
 
+* Invocamos de nuevo avr-gcc con el siguiente comando
+`avr-gcc -g -Os -Wall -DF_CPU=1000000L -mmcu=attiny85 -o hello.elf hello.o`
+
+>como veran solo cambiamos el archivo de entrada y salida
+
+Con ello tendremos el archivo hello.elf en el directorio.
+
+![img][helloElf]
+
+* Extraemos el hello.hex con el comando:
+`avr-objcopy -j .text -j .data -O ihex hello.elf hello.hex`
+
+> -j .xxxx extrae esa seccion del archivo .elf, asi el comando indica que se extraeran las secciones .text y .data del archivo .elf
+> -O determina el tipo de archivo de salida en base al parametro, en este caso [ihex](http://en.wikipedia.org/wiki/Intel_HEX).
+
+
+Con ello tendremos el archivo hello.hex, el cual le pasaremos a avrdude para que lo cargue en nuestro avr.
+
+ 
 
 
 
