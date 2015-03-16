@@ -140,22 +140,22 @@ Al listar el contenido de la carpeta debemos tener algo asi:
 *ahora continuaremos con la compilacion.*
 
 Obtener el archivo que cargaremos al avr consiste en tres pasos. 
-1 generar el archivo objeto (*file.o*).
-2 usando el archivo objeto generar el archivo elf (*file.elf*)
-3 extraemos cierts seccions del archivo elf para generar el archivo hex que es el que cargaremos al AVR.
+1. generar el archivo objeto (*file.o*).
+2. usando el archivo objeto generar el archivo elf (*file.elf*)
+3. extraemos cierts seccions del archivo elf para generar el archivo hex que es el que cargaremos al AVR.
 
 Pasos:
 
 * Invocamos avr-gcc con el siguiente comando:
 `avr-gcc -g -Os -Wall -DF_CPU=1000000L -mmcu=attiny85 -c hello.c -o hello.o`
 
-> -g nos habilita
-> -Os
-> -Wall activa todas las notificaciones
-> -DF_CPU asigna la velocidad del reloj interno del attiny
-> -mmcu identifica que uC estamos utilizando
-> -c es el archivo a compilar
-> -o el archivo que generaremos
+> -g nos habilita </br>
+> -Os </br>
+> -Wall activa todas las notificaciones </br>
+> -DF_CPU asigna la velocidad del reloj interno del attiny </br>
+> -mmcu identifica que uC estamos utilizando </br>
+> -c es el archivo a compilar </br>
+> -o el archivo que generaremos </br>
 
 Obtendremos el archivo hello.o en nuestro directorio
 
