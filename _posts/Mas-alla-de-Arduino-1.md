@@ -149,13 +149,13 @@ Pasos:
 * Invocamos avr-gcc con el siguiente comando:
 `avr-gcc -g -Os -Wall -DF_CPU=1000000L -mmcu=attiny85 -c hello.c -o hello.o`
 
-> -g nos habilita </br>
-> -Os </br>
-> -Wall activa todas las notificaciones </br>
-> -DF_CPU asigna la velocidad del reloj interno del attiny </br>
-> -mmcu identifica que uC estamos utilizando </br>
-> -c es el archivo a compilar </br>
-> -o el archivo que generaremos </br>
+> -g nos habilita \s\s
+> -Os \s\s
+> -Wall activa todas las notificaciones \s\s
+> -DF_CPU asigna la velocidad del reloj interno del attiny \s\s
+> -mmcu identifica que uC estamos utilizando \s\s
+> -c es el archivo a compilar \s\s
+> -o el archivo que generaremos \s\s
 
 Obtendremos el archivo hello.o en nuestro directorio
 
