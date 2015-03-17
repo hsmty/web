@@ -201,4 +201,4 @@ Un [vine](https://vine.co/v/OV127Vlb9PL) sobre la carga del programa.
 [avrgcc]: /assets/post_img/avr/avrgcc.png "avrgcc"
 [archivos]: /assets/post_img/avr/archivos.png "archivos"
 [carga]: /assets/post_img/avr/carga.png "carga"
-[armado]: /assets/post_img/avr/armado.png "armado"
+[armado]: /assets/post_img/avr/armado.jpg "armado"
