@@ -14,8 +14,8 @@ Cabe mencionar que todo el **toolchain** de AVR es open source y podremos utiliz
 
 <!--more-->
 
-Con tantas tecnologías alla afuera,  existe una necesidad natural de ir llendo mas alla de los conocimientos que se tienen, de forma que se puedan completar mas cosas.
-Este pensamiento nos ha llevado a explorar esas otras opciones microcontroladores de la familia AVR, para esta seria de post iniciaremos con el attiny85.
+Con tantas tecnologías alla afuera,  existe una necesidad natural de ir mas allá de los conocimientos que se tienen, de forma que se puedan completar mas cosas.
+Este pensamiento nos ha llevado a explorar esas otras opciones microcontroladores de la familia AVR, para esta serie de artículos iniciaremos con el microcontrolador ATtiny85.
 De este uC exploraremos sus funciones principales: i/o, pwm, i2c, spi e interrupts. Es un micropequeño en memoria, tamaño y tambien en costo, sin embargo, esos 8 pines pueden ofrecer mas que suficiente para algunas tareas o el aprendizaje de la plataforma.
 
 El segundo punto en el que nos adentraremos es utilizar la Raspberry como el medio en el que escribiremos, compilaremos y cargaremos el software a el uC, utilizando solo la terminal y las herramientas que existen en el ecosistema linux para esta tarea.
