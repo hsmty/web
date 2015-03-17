@@ -64,6 +64,8 @@ Comenzaremos por preparar el hardware.
 
 Aquí un [vine](https://vine.co/v/OV1Qin7JTqr) sobre el armado del sistema.
 
+![img6][armado]
+
 Ahora el software.
 
 Un solo comando instalara en la raspberry lo necesario para nuestro proposito de desarrollo para AVRs. 
@@ -84,7 +86,7 @@ Nos debe mostrar la siguiente pantalla, en ella se listan las opciones disponibl
 
 ![img4][avrgcc]
 
-Una ves hecho esto podemos probar el toolchain.
+Con esto probamos que tenemos el software para trabajar y podemos probar el toolchain.
 
 ###Generacion de ejecutable.
 
@@ -199,4 +201,4 @@ Un [vine](https://vine.co/v/OV127Vlb9PL) sobre la carga del programa.
 [avrgcc]: /assets/post_img/avr/avrgcc.png "avrgcc"
 [archivos]: /assets/post_img/avr/archivos.png "archivos"
 [carga]: /assets/post_img/avr/carga.png "carga"
-
+[armado]: /assets/post_img/avr/armado.png "armado"
