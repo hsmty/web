@@ -60,34 +60,45 @@ Comenzaremos por preparar el hardware.
 * Conectamos los 6 jumpers de la interface isp al arduino.
 
 <table>
-    <th>
+    <thead>
+        <tr>
         <td>AVR</td>
+        <td></td>
         <td>Arduino</td>
-    </th>
-    <tr>
-        <td>SCK</td>
-        <td>Pin 13</td>
-    </tr>
-    <tr>
-        <td>MISO</td>
-        <td>Pin 12</td>
-    </tr>
-    <tr>
-        <td>MOSI</td>
-        <td>Pin 11</td>
-    </tr>
-    <tr>
-        <td>RESET</td>
-        <td>Pin 10</td>
-    </tr>
-    <tr>
-        <td>VCC</td>
-        <td>5V</td>
-    </tr>
-    <tr>
-        <td>GND</td>
-        <td>GND</td>
-    </tr>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>SCK</td>
+            <td>-</td>
+            <td>Pin 13</td>
+        </tr>
+        <tr>
+            <td>MISO</td>
+            <td>-</td>
+            <td>Pin 12</td>
+        </tr>
+        <tr>
+            <td>MOSI</td>
+            <td>-</td>
+            <td>Pin 11</td>
+        </tr>
+        <tr>
+            <td>RESET</td>
+            <td>-</td>
+            <td>Pin 10</td>
+        </tr>
+        <tr>
+            <td>VCC</td>
+            <td>-</td>
+            <td>5V</td>
+        </tr>
+        <tr>
+            <td>GND</td>
+            <td>-</td>
+            <td>GND</td>
+        </tr>
+    </tbody>
 </table>
 
 * Añadimos un led con resistencia el puerto 4 (pin 3 del attiny) y otro al puerto 3 (pin 2 del attiny) para ayudarnos a validar que cargamos bien el software (al finalizar ambos leds deben empezar a parpadear altenadamente).
