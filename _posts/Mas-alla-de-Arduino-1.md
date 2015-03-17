@@ -6,7 +6,7 @@ author: Edén Candelas
 ##Mas alla de Arduino
 ###Programacion de AVR attiny desde una raspberry.
 
-![img1][fullSolution]
+![img1][completo]
 
 Hay un momento en la vida de todo maker en el que se madura y se empiezan a explorar otras plataformas.
 El explorar lo que nos ofrece ATMEL y su plataforma AVR es el paso natural a seguir despues de arduino.
@@ -30,10 +30,11 @@ Hardware.
 * Arduino uno con [arduinoISP](http://arduino.cc/en/Tutorial/ArduinoISP) cargado. 
 * Microcontrolador avr ATTINY85
 * 20 cables jumper machos.
-* Capacitor 1 uF.
-* 8 [blinkenlights]()
+* 2 leds con resistencias de 220 o 330 ohms
 * Resistor 10k ohms.
 * Protoboard.
+
+![imgComp][componentes]
 
 Software
 
@@ -44,33 +45,22 @@ Software
 
 Comenzaremos por preparar el hardware.
 
-Paso uno conectar el arduino a unos de los puertos usb de la raspberry.
+* Paso uno conectar el arduino a unos de los puertos usb de la raspberry.
+* Montamos el avr al proto y la resistencia de 10k
+* Conectamos los cables jumper en la interface isp, asu vez GND y +5v.
+* Conectamos los 6 jumpers de la interface isp al arduino.
 
-![img2][piduino]
+    AVR - ARDUINO
+    * SCK 	- pin 13
+    * MISO 	- pin 12
+    * MOSI 	- pin 11
+    * RESET	- pin 10
+    * VCC 	- 5v
+    * GND 	- GND
 
-Montamos el avr al proto junto con el capacitor y la resistencia de 10k
+* Añadimos un led con resistencia el puerto 4 (pin 3 del attiny) y otro al puerto 3 (pin 2 del attiny) para ayudarnos a validar que cargamos bien el software (al finalizar ambos leds deben empezar a parpadear altenadamente).
 
-![img3][tinyOnTheBoard]
-
-Conectamos los cables jumper en la interface isp, asu vez GND y +5v.
-
-![img4][tinyWiring]
-
-Conectamos los 6 jumpers de la interface isp al arduino.
-
-AVR - ARDUINO
-* SCK 	- pin 13
-* MISO 	- pin 12
-* MOSI 	- pin 11
-* RESET	- pin 10
-* VCC 	- 5v
-* GND 	- GND
-
-![img5][duinoWiring]
-
-Añadimos un blinkenled a el puerto 4 (pin 3 del attiny) para ayudarnos a validar que el software se cargue correctamente.
-
-![img6][tinyBlinkled]
+Aquí un [vine](https://vine.co/v/OV1Qin7JTqr) sobre el armado del sistema.
 
 Ahora el software.
 
@@ -90,9 +80,11 @@ Nos debe mostrar la siguiente pantalla, en ella se listan las opciones disponibl
 
 `$ avr-gcc --help`
 
+![img8][avrgccHelp]
+
 Una ves hecho esto podemos probar el toolchain.
 
-###Prueba de toolchain.
+###Generacion de ejecutable.
 
 Toolchain es el nombre con el que se le conoce a el flujo de trabajo que se sigue para realizar cierta tarea.
 En este caso estamos hablando el programador, uC, editor, compilador y cargador de software.
@@ -149,25 +141,20 @@ Pasos:
 * Invocamos avr-gcc con el siguiente comando:
 `avr-gcc -g -Os -Wall -DF_CPU=1000000L -mmcu=attiny85 -c hello.c -o hello.o`
 
-> -g nos habilita 
-
-> -Os 
-
-> -Wall activa todas las notificaciones
-
-> -DF_CPU asigna la velocidad del reloj interno del attiny
-
-> -mmcu identifica que uC estamos utilizando
-
-> -c es el archivo a compilar
-
-> -o el archivo que generaremos 
+    -g nos habilita 
+    -Os 
+    -Wall activa todas las notificaciones
+    -DF_CPU asigna la velocidad del reloj interno del attiny
+    -mmcu identifica que uC estamos utilizando
+    -c es el archivo a compilar
+    -o el archivo que generaremos 
 
 Obtendremos el archivo hello.o en nuestro directorio
 
 ![img][helloObj]
 
 * Invocamos de nuevo avr-gcc con el siguiente comando
+
 `avr-gcc -g -Os -Wall -DF_CPU=1000000L -mmcu=attiny85 -o hello.elf hello.o`
 
 >como veran solo cambiamos el archivo de entrada y salida
@@ -177,17 +164,35 @@ Con ello tendremos el archivo hello.elf en el directorio.
 ![img][helloElf]
 
 * Extraemos el hello.hex con el comando:
+
 `avr-objcopy -j .text -j .data -O ihex hello.elf hello.hex`
 
-> -j .xxxx extrae esa seccion del archivo .elf, asi el comando indica que se extraeran las secciones .text y .data del archivo .elf
-> -O determina el tipo de archivo de salida en base al parametro, en este caso [ihex](http://en.wikipedia.org/wiki/Intel_HEX).
-
+    -j .xxxx extrae esa seccion del archivo .elf, asi el comando indica que se extraeran las secciones .text y .data del archivo .elf
+    -O determina el tipo de archivo de salida en base al parametro, en este caso [ihex](http://en.wikipedia.org/wiki/Intel_HEX).
 
 Con ello tendremos el archivo hello.hex, el cual le pasaremos a avrdude para que lo cargue en nuestro avr.
 
- 
+###Carga de ejecutable
+
+* Cargamos el archivo hello.hex al AVR con el comando
+
+`avrdude -p attiny -c avrisp -P /dev/ttyACM0 -b 19200 -U flash:w:hello.hex:i`
+
+    -p es el nombre del microcontrolador 
+    -c tipo de programador (arduinoISP funciona como un programador tipo avrisp)
+    -P puerto serial asignado al programador (en este caso es ACM0 ya que es una board arduino uno)
+    -b velocidad con la que usaremos el puerto (en mi caso 9600 no funciono, por eso lo eleve a 19200)
+    -U accion que vamos a realizar con el programador (se puede leer, copiar o borrar el target)
+
+Al ejecutar el comando en la pantalla se mostrara el procedimiento. Al mismo tiempo podemos ver los leds del serial de arduino parpadeando y al finalizar la carga los leds conectados al pin 2 y 3 del avr empezaran a parpadear alternadamente.
+
+![img][logCarga]
+
+Un [vine](https://vine.co/v/OV127Vlb9PL) sobre la carga del programa.
 
 
+[componentes]: /assets/post_img/avr/componentes.png "componentes"
+[completo]: /assets/post_img/avr/completo.jpg "completo"
 
 
 
