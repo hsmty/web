@@ -3,19 +3,21 @@ layout: post
 title: "Mas alla de Arduino - parte 1"
 author: Edén Candelas
 ---
-##Mas alla de Arduino
+
+Mas alla de Arduino
+==========================================================================
 ###Programacion de AVR attiny desde una raspberry.
 
 ![img1][completo]
 
 Hay un momento en la vida de todo maker en el que se madura y se empiezan a explorar otras plataformas.
 El explorar lo que nos ofrece ATMEL y su plataforma AVR es el paso natural a seguir despues de arduino.
-Cabe mencionar que todo el toolchain es opensource y podremos utilizarlo desde linux/raspberry sin chistar.
+Cabe mencionar que todo el toolchain de AVR es opensource y podremos utilizarlo desde linux/raspberry sin chistar.
 
 <!--more-->
 
-Hay tantas technologias alla afuera, que rebasan nuestra capacidad para poder conocerlas y utilizarlas todas, sin embargo, existe una necesidad natural de ir llendo mas alla de los conocimientos que se tienen, de forma que se puedan completar mas cosas.
-Este pensamiento nos ha llevado a manejar directamente los otros microcontroladores de la familia AVR, para esta seria de post iniciaremos con el attiny85.
+Con tantas tecnologías alla afuera,  existe una necesidad natural de ir llendo mas alla de los conocimientos que se tienen, de forma que se puedan completar mas cosas.
+Este pensamiento nos ha llevado a explorar esas otras opciones microcontroladores de la familia AVR, para esta seria de post iniciaremos con el attiny85.
 De este uC exploraremos sus funciones principales: i/o, pwm, i2c, spi e interrupts. Es un micropequeño en memoria, tamaño y tambien en costo, sin embargo, esos 8 pines pueden ofrecer mas que suficiente para algunas tareas o el aprendizaje de la plataforma.
 
 El segundo punto en el que nos adentraremos es utilizar la Raspberry como el medio en el que escribiremos, compilaremos y cargaremos el software a el uC, utilizando solo la terminal y las herramientas que existen en el ecosistema linux para esta tarea.
@@ -76,11 +78,11 @@ Para ello tecleamos:
 
 Nos debe mostrar la siguiente pantalla, en ella se listan las opciones disponibles y la version instalada.
 
-![img7][avrdudeOptions]
+![img3][avrdude]
 
 `$ avr-gcc --help`
 
-![img8][avrgccHelp]
+![img4][avrgcc]
 
 Una ves hecho esto podemos probar el toolchain.
 
@@ -124,14 +126,14 @@ int main(){
 
 * Guardamos el archivo con Ctrl-O 
 * Salimos con Ctrl-x
+* Vemos el archivo con `$ls`
 
-Al listar el contenido de la carpeta debemos tener algo asi:
-
-![img][Hellols]
+En este momento tenemos en nuestra carpeta de projecto un unico archivo hello.c.
 
 *ahora continuaremos con la compilacion.*
 
 Obtener el archivo que cargaremos al avr consiste en tres pasos. 
+
 1. generar el archivo objeto (*file.o*).
 2. usando el archivo objeto generar el archivo elf (*file.elf*)
 3. extraemos cierts seccions del archivo elf para generar el archivo hex que es el que cargaremos al AVR.
@@ -149,9 +151,7 @@ Pasos:
     -c es el archivo a compilar
     -o el archivo que generaremos 
 
-Obtendremos el archivo hello.o en nuestro directorio
-
-![img][helloObj]
+*Obtendremos el archivo hello.o en nuestro directorio*
 
 * Invocamos de nuevo avr-gcc con el siguiente comando
 
@@ -159,9 +159,7 @@ Obtendremos el archivo hello.o en nuestro directorio
 
 >como veran solo cambiamos el archivo de entrada y salida
 
-Con ello tendremos el archivo hello.elf en el directorio.
-
-![img][helloElf]
+*Con ello tendremos el archivo hello.elf en el directorio.*
 
 * Extraemos el hello.hex con el comando:
 
@@ -170,7 +168,11 @@ Con ello tendremos el archivo hello.elf en el directorio.
     -j .xxxx extrae esa seccion del archivo .elf, asi el comando indica que se extraeran las secciones .text y .data del archivo .elf
     -O determina el tipo de archivo de salida en base al parametro, en este caso [ihex](http://en.wikipedia.org/wiki/Intel_HEX).
 
-Con ello tendremos el archivo hello.hex, el cual le pasaremos a avrdude para que lo cargue en nuestro avr.
+*Con ello tendremos el archivo hello.hex, el cual le pasaremos a avrdude para que lo cargue en nuestro avr.*
+
+ahora tendemos los archivos en el directorio.
+
+![img5][archivos]
 
 ###Carga de ejecutable
 
@@ -186,14 +188,15 @@ Con ello tendremos el archivo hello.hex, el cual le pasaremos a avrdude para que
 
 Al ejecutar el comando en la pantalla se mostrara el procedimiento. Al mismo tiempo podemos ver los leds del serial de arduino parpadeando y al finalizar la carga los leds conectados al pin 2 y 3 del avr empezaran a parpadear alternadamente.
 
-![img][logCarga]
+![img6][carga]
 
 Un [vine](https://vine.co/v/OV127Vlb9PL) sobre la carga del programa.
 
 
 [componentes]: /assets/post_img/avr/componentes.png "componentes"
 [completo]: /assets/post_img/avr/completo.jpg "completo"
-
-
-
+[avrdude]: /assets/post_img/avr/avrdude.png "avrdude"
+[avrgcc]: /assets/post_img/avr/avrgcc.png "avrgcc"
+[archivos]: /assets/post_img/avr/archivos.png "archivos"
+[carga]: /assets/post_img/avr/carga.png "carga"
 
