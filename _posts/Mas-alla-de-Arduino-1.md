@@ -194,6 +194,7 @@ Al ejecutar el comando en la pantalla se mostrara el procedimiento. Al mismo tie
 
 Un [vine](https://vine.co/v/OV127Vlb9PL) sobre la carga del programa.
 
+@elmundoverdees
 
 [componentes]: /assets/post_img/avr/componentes.png "componentes"
 [completo]: /assets/post_img/avr/completo.jpg "completo"
