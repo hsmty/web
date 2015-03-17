@@ -8,28 +8,36 @@ author: Edén Candelas
 
 ![img1][completo]
 
-Hay un momento en la vida de todo __maker__ en el que madura y empiezan a explorar otras plataformas,
+Hay un momento en la vida de todo _maker_ en el que madura y empiezan a explorar otras plataformas,
 como todo lo que nos ofrece ATMEL. Su plataforma AVR es el paso natural a seguir después de Arduino.
-Cabe mencionar que todo el __toolchain__ de AVR es __open__ __source__ y podremos utilizarlo desde Linux
+Cabe mencionar que todo el _toolchain_ de AVR es _open_ _source_ y podremos utilizarlo desde Linux
 en la Raspberry Pi sin chistar.
 
 <!--more-->
 
-Con tantas tecnologías alla afuera,  existe una necesidad natural de ir mas allá de los conocimientos que se tienen, de forma que se puedan completar mas cosas.
-Este pensamiento nos ha llevado a explorar esas otras opciones microcontroladores de la familia AVR, para esta serie de artículos iniciaremos con el microcontrolador ATtiny85.
-De este uC exploraremos sus funciones principales: i/o, pwm, i2c, spi e interrupts. Es un micropequeño en memoria, tamaño y tambien en costo, sin embargo, esos 8 pines pueden ofrecer mas que suficiente para algunas tareas o el aprendizaje de la plataforma.
+Con tantas tecnologías alla afuera,  existe una necesidad natural de ir mas allá de los conocimientos
+que se tienen, de forma que se puedan completar mas cosas. Este pensamiento nos ha llevado a explorar
+esas otras opciones microcontroladores de la familia AVR, para esta serie de artículos iniciaremos
+con el microcontrolador ATtiny85. De este microcontrolador exploraremos sus funciones principales:
+I/O, PWM, I2C, SPI e _interrupts_ . Es un micro pequeño en memoria, tamaño y también en costo, sin
+embargo esos 8 pines pueden ofrecer mas que suficiente para algunas tareas o el aprendizaje de la
+plataforma.
 
-El segundo punto en el que nos adentraremos es utilizar la Raspberry como el medio en el que escribiremos, compilaremos y cargaremos el software a el uC, utilizando solo la terminal y las herramientas que existen en el ecosistema linux para esta tarea.
+El segundo punto en el que nos adentraremos es utilizar la Raspberry como el medio en el que
+escribiremos, compilaremos y cargaremos el software a el microcontrolador, utilizando solo la
+terminal y las herramientas que existen en el ecosistema Linux para esta tarea.
 
-La razon de esto son un par de proyectos de los miembros del Hackerspace, en el que raspberries y uC son la parte principal.
+La razón de esto son un par de proyectos de los miembros del Hackerspace, en el que Raspberries y
+los microcontroladores son la parte principal.
 
-###Requerimientos.
 
-Hardware.
+### Requerimientos.
 
-* Raspberry pi (B, B+ o 2) con raspian preinstalado y configurada para trabajo en linea de comandos.
+Hardware:
+
+* Raspberry pi (B, B+ o 2 B) con Raspian pre-instalado y configurada para trabajo en linea de comandos.
 * Arduino uno con [arduinoISP](http://arduino.cc/en/Tutorial/ArduinoISP) cargado. 
-* Microcontrolador avr ATTINY85
+* Microcontrolador AVR ATTiny85
 * 20 cables jumper machos.
 * 2 leds con resistencias de 220 o 330 ohms
 * Resistor 10k ohms.
@@ -37,12 +45,12 @@ Hardware.
 
 ![imgComp][componentes]
 
-Software
+Software:
 
-* avr-gcc. Basicamente gcc con las opciones para compilar codigo especifico para AVRs.
-* avrdude. Software para cargar el codigo maquina a los uC (attiny en este caso).
+* avr-gcc: Basicamente gcc con las opciones para compilar codigo especifico para AVRs.
+* avrdude: Software para cargar el codigo maquina a los uC (attiny en este caso).
 
-###Setup.
+### Setup.
 
 Comenzaremos por preparar el hardware.
 
@@ -51,13 +59,36 @@ Comenzaremos por preparar el hardware.
 * Conectamos los cables jumper en la interface isp, asu vez GND y +5v.
 * Conectamos los 6 jumpers de la interface isp al arduino.
 
-    AVR - ARDUINO
-    * SCK 	- pin 13
-    * MISO 	- pin 12
-    * MOSI 	- pin 11
-    * RESET	- pin 10
-    * VCC 	- 5v
-    * GND 	- GND
+<table>
+    <th>
+        <td>AVR</td>
+        <td>Arduino</td>
+    </th>
+    <tr>
+        <td>SCK</td>
+        <td>Pin 13</td>
+    </tr>
+    <tr>
+        <td>MISO</td>
+        <td>Pin 12</td>
+    </tr>
+    <tr>
+        <td>MOSI</td>
+        <td>Pin 11</td>
+    </tr>
+    <tr>
+        <td>RESET</td>
+        <td>Pin 10</td>
+    </tr>
+    <tr>
+        <td>VCC</td>
+        <td>5V</td>
+    </tr>
+    <tr>
+        <td>GND</td>
+        <td>GND</td>
+    </tr>
+</table>
 
 * Añadimos un led con resistencia el puerto 4 (pin 3 del attiny) y otro al puerto 3 (pin 2 del attiny) para ayudarnos a validar que cargamos bien el software (al finalizar ambos leds deben empezar a parpadear altenadamente).
 
@@ -95,14 +126,14 @@ En este caso estamos hablando el programador, uC, editor, compilador y cargador 
 **Archivo fuente**
 
 * En home creeamos una carpeta llamada hello. `$mkdir hello`
-* Nos movemos a la nueva carpeta `$cd hello`
+* Nos movemos a la nueva carpeta `$ cd hello`
 * Creamos un archivo llamado hello.c `$ touch hello.c`
 * Accesamos el archivo para editarlo `$ nano hello.c`
  
  
-*Para facilitar la prueba copien el siguiente codigo dentro de hello.c*
+**Para facilitar la prueba copien el siguiente codigo dentro de hello.c**
 
-```
+
     #include <avr/io.h>
     #include <util/delay.h>
     
@@ -121,18 +152,17 @@ En este caso estamos hablando el programador, uC, editor, compilador y cargador 
         }
         return 0;
     }
-    
-```
+
 
 * Guardamos el archivo con Ctrl-O 
 * Salimos con Ctrl-x
-* Vemos el archivo con `$ls`
+* Vemos el archivo con `$ ls`
 
-En este momento tenemos en nuestra carpeta de projecto un unico archivo hello.c.
+En este momento tenemos en nuestra carpeta de projecto un único archivo hello.c.
 
-**Compilacion.**
+### Compilación
 
-Obtener el archivo que cargaremos al avr consiste en tres pasos. 
+Obtener el archivo que cargaremos al AVR consiste en tres pasos. 
 
 1. generar el archivo objeto (*file.o*).
 2. usando el archivo objeto generar el archivo elf (*file.elf*)
