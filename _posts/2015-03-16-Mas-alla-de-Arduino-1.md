@@ -1,16 +1,16 @@
 ---
 layout: post
-title: "Mas alla de Arduino - parte 1"
+title: "Mas allá de Arduino - parte 1"
 author: Edén Candelas
 ---
 
-###Programacion de AVR attiny desde una raspberry.
+### Programacion de AVR ATtiny desde una raspberry.
 
 ![img1][completo]
 
 Hay un momento en la vida de todo maker en el que se madura y se empiezan a explorar otras plataformas.
-El explorar lo que nos ofrece ATMEL y su plataforma AVR es el paso natural a seguir despues de arduino.
-Cabe mencionar que todo el toolchain de AVR es opensource y podremos utilizarlo desde linux/raspberry sin chistar.
+El explorar lo que nos ofrece ATMEL y su plataforma AVR es el paso natural a seguir despues de Arduino.
+Cabe mencionar que todo el **toolchain** de AVR es open source y podremos utilizarlo desde linux/raspberry sin chistar.
 
 <!--more-->
 
