@@ -104,26 +104,25 @@ En este caso estamos hablando el programador, uC, editor, compilador y cargador 
 *Para facilitar la prueba copien el siguiente codigo dentro de hello.c*
 
 ```
-#include <avr/io.h>
-#include <util/delay.h>
+    #include <avr/io.h>
+    #include <util/delay.h>
+    
+    int main(){
+        DDRB |= (1 << PB4);
+        DDRB |= (1 << PB3);
+        
+        while(1){
+            PORTB |= (1 << PB4);
+            PORTB &= ~(1 << PB3);
+            _delay_ms(500);
+            PORTB &= ~(1 << PB4);
+            PORTB |= (1 << PB3);
+            _delay_ms(500);
+        }
+    
+        return 0;
 
-
-int main(){
-    DDRB |= (1 << PB4);
-    DDRB |= (1 << PB3);
-
-    while(1){
-        PORTB |= (1 << PB4);
-        PORTB &= ~(1 << PB3);
-        _delay_ms(500);
-        PORTB &= ~(1 << PB4);
-        PORTB |= (1 << PB3);
-        _delay_ms(500);
     }
-
-    return 0;
-
-}
 ```
 
 * Guardamos el archivo con Ctrl-O 
