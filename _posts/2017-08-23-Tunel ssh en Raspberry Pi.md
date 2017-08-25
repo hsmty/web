@@ -1,66 +1,90 @@
 ---
 layout: post
-title: "Tunel ssh para RaspberryPi"
+title: "Túnel ssh para RaspberryPi"
 author: Edén Candelas
 ---
 
-#objetivo.
-Permitir a un usuario el poder acceder a una raspberry que esta detras de una ip dinamica
-la cual no provee algun servicio de nating para accesder a la raspy remotamente.
+# El objetivo.
 
-En nuestro caso requerimosesto para monitorear remotamente que algunos de nuestros
-equipos esten en funcionamiento y obtener logs para ver si se comportan como deberian.
+Acceder a una RaspberryPi[1] que está detrás de una IP dinámica (lo más
+común para proveedores de Internet en hogares) sin necesidad de configurar
+algún servicio de NATing[2] en el modem y/o router.
 
-Lo que hacemos con un tunnel ssh (especificamente reverse ssh tunnel) es crear una
-conexion encriptada desde la raspy al server de manera que esta conexion se inicialice
-cuando se enciende la raspy y se reconecte si la conexion se cae. Asi cuando se accese
-al server como usuario del tunel podamos tener acceso a la raspberry.
+Un caso de uso sería monitorear nuestros equipos remotamente, revisando que
+su funcionamiento sea el correcto.
+
+Cómo funciona esto es que creamos un túnel inverso (eng. reverse SSH tunel)
+utilizando SSH[3], esto crea una conexión encriptada desde la Raspberry Pi
+al servidor, la configuramos de tal manera que esta conexión inicie
+automáticamente cada que se enciende la máquina, así podemos asegurarnos
+que la conexión se reestablesca si se llegase a interrumpir.
 
 
-#asumpciones.
-* Se tienen una pc/laptop conectada a una red con salida a internet.
-* Se tiene una raspberry conenctada a la misma red  que la pc/laptop.
-* Se tiene un server accesible publicamente al cual nos podemos conectar por ssh
+# Asumpciones
 
-#Setup usuarios
-##preparar usuario para tunel en raspberry
+* Se tiene acceso a un servidor con IP pública y SSH
+* Se tiene una PC (Workstation/Desktop/Mac/Laptop).
+* Se tiene una Raspberry Pi.
+* Se tiene una salida a Internet.
+* Se tiene una red local (LAN).
+* La PC y Raspberry están conectadas a la LAN.
 
-* Habilitar ssh en raspberry.
-`$sudo raspy-config`
+# Configuración para usuarios
+## Preparar usuario para túnel la Raspberry
+
+* Habilitar SSH en raspberry.
+
+	$ sudo raspy-config
 
 [imagen raspy-config menu]
 [imagen raspy-config opcion]
 
-* Crear usuario para tunel en raspberry
-`$sudo adduser usuarioTunel`
+* Crear usuario para el tunel en Raspberry.
+
+	$ sudo adduser tunnel
 
 [imagen alta-usuario]
 
-* Cambiar a usuarioTunel
-`$su usuarioTunel`
+* Cambiar de usuario a tunnel.
 
-* Crear llaves ssh para usuarioTunel
+	$ su tunnel
 
-`$ssh-keygen`
+* Crear un par de llaves SSH para el usuario Tunnel.
 
-* Obtener ip asignada ala raspberry.
+	$ ssh-keygen
 
-`$ifconfig`- Guardar ip asignada ala interface con la que estemos conectados ala red
-local.
+* Obtener la dirección IP asignada a la Raspberry.
 
-##preparar usuario para tunel en servidor
+	$ ip addr show
 
-* Crear usuario para tunel en server
-`$sudo adduser usuarioTunelServer`
+Esto desplegara una lista de tus interfaces, busca la dirección IP
+como un juego de cuatro números junto la etiqueta 'inet'.
+
+e.g.
+
+	4: wlan1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1400 qdisc mq state UP group default qlen 1000
+	    link/ether 00:00:00:00:00:00 brd ff:ff:ff:ff:ff:ff
+	    inet 192.168.0.2/24 brd 192.168.0.255 scope global wlan1
+	    valid_lft forever preferred_lft forever
+	    inet6 fe80::c66e:1fff:fe16:49e3/64 scope link
+	    valid_lft forever preferred_lft forever
+
+En este caso la dirección sería `192.168.0.2`
+
+## Preparar usuario para túnel en servidor
+
+* Crear usuario para túnel en server
+
+	$ sudo adduser tunnel
 
 [imagen alta-usuario]
 
 * Crear carpeta .ssh
 
-`$su usuarioTunelServer`
-`$cd ~`
-`$mkdir .ssh `
-`$cd .ssh`
+	$ su tunnel
+	$ cd ~
+	$ mkdir .ssh
+	$ cd .ssh
 
 ##Pasar archivo id_rsa.pub de raspberry pi a server y guardar sus contenidos en el archivo authorized_keys.
 
@@ -82,10 +106,10 @@ Existen varias formas de hacer esto, la manera en la que hare esto es mediante s
 
 
 * Crear archivo authorized_keys en carpteta .ssh
-`$touch .ssh/authorized_keys`
+	$ touch .ssh/authorized_keys
 
 * Copiar contenidos de id_rsa.pub a authorized_keys
-`$cat /home/<usuario-server>/id_rsa.pub >> .ssh/authorized_keys`
+	$ cat /home/<usuario-server>/id_rsa.pub >> .ssh/authorized_keys
 
 Con esto debemos tener nuestra llave publica que se creo en la raspberry pi dentro de
 la cuenta usuarioTunelServer dentro del servidor.
@@ -93,9 +117,9 @@ la cuenta usuarioTunelServer dentro del servidor.
 Para validar esto validamos que el contenido de el archivo .ssh/authorized_keys sea el mismo
 en el usuarioTunel de la raspberrypi y el usuarioTunelServer del servidor.
 
-`$cat .ssh/authorized_keys`
+	$ cat .ssh/authorized_keys
 
-#Crear tunel
+# Crear tunel
 ## Crear y probar comando tunel.
 
 * Ingresar a raspberrypi con el usuarioTunel desde pc/laptop.
