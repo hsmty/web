@@ -34,35 +34,35 @@ que la conexión se reestablesca si se llegase a interrumpir.
 
 * Habilitar SSH en raspberry.
 
-	$ sudo raspy-config
+	rpi$ sudo raspy-config
 
 [imagen raspy-config menu]
 [imagen raspy-config opcion]
 
 * Crear usuario para el tunel en Raspberry.
 
-	$ sudo adduser tunnel
+	rpi$ sudo adduser tunnel
 
 [imagen alta-usuario]
 
 * Cambiar de usuario a tunnel.
 
-	$ su tunnel
+	rpi$ su tunnel
 
 * Crear un par de llaves SSH para el usuario Tunnel.
 
-	$ ssh-keygen
+	rpi$ ssh-keygen
 
 * Obtener la dirección IP asignada a la Raspberry.
 
-	$ ip addr show
+	rpi$ ip addr show
 
 Esto desplegara una lista de tus interfaces, busca la dirección IP
 como un juego de cuatro números junto la etiqueta 'inet'.
 
 e.g.
 
-	4: wlan1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1400 qdisc mq state UP group default qlen 1000
+	3: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1400 qdisc mq state UP group default qlen 1000
 	    link/ether 00:00:00:00:00:00 brd ff:ff:ff:ff:ff:ff
 	    inet 192.168.0.2/24 brd 192.168.0.255 scope global wlan1
 	    valid_lft forever preferred_lft forever
@@ -73,53 +73,49 @@ En este caso la dirección sería `192.168.0.2`
 
 ## Preparar usuario para túnel en servidor
 
-* Crear usuario para túnel en server
+* Crear usuario para túnel en servidor
 
-	$ sudo adduser tunnel
+	servidor$ sudo adduser tunnel
 
 [imagen alta-usuario]
 
 * Crear carpeta .ssh
 
-	$ su tunnel
-	$ cd ~
-	$ mkdir .ssh
-	$ cd .ssh
+	servidor$ su tunnel
+	servidor$ cd ~
+	servidor$ mkdir .ssh
+	servidor$ cd .ssh
 
-##Pasar archivo id_rsa.pub de raspberry pi a server y guardar sus contenidos en el archivo authorized_keys.
+## Copiar llave pública al servidor
 
-Existen varias formas de hacer esto, la manera en la que hare esto es mediante scp:
+El par de llaves criptográficas que acabamos de crear nos servirán para poder
+conectarnos al servidor desde la Raspberry sin necesidad de tener que ingresar
+la contraseña del usuario cada vez que tenemos que conectarnos al él.
 
-* Copiar el archivo id_rsa.pub desde la raspy a mi laptop.
-`$scp usuarioTunel@<ip-raspberry>:/home/usuarioTunel/.ssh/id_rsa.pub /home/<usuario-pc/`
+* Copiamos la llave pública, id_rsa.pub, de la Raspberry al servidor, utilizando
+  nuestra PC como intermediario. Reemplaza <raspberry-ip> con la dirección.
 
-* Una ves ahi copiar el archivo de mi laptop a mi cuenta del server.
-`$scp /home/<usuario-pc>/id_rsa.pub <usuario-server>@<ip-server>:/home/<usuario-server>`
- hago esto por que no se creo en mi laptop llaves para el usuarioTunelServer.
+	PC$ scp tunnel@<raspberry-ip>:.ssh/id_rsa.pub raspberry_public_key
 
-* Ingresar a servidor como usuario-server
-`$ssh <usuario-server>@<ip-server>`
+* Una vez hecho esto, copiamos la llave al servidor:
+	PC$ scp raspberry_public_key tunnel@<servidor>:
 
-* Cambiar a usuarioTunelServer.
-`$su usuarioTunelServer`
-`$cd ~`
+* Ingresamos al servidor para colocar la llave pública de la Raspberry en la
+  lista de llaves autorizadas para realizar identificar.
 
+	PC$ ssh <servidor>
+	servidor$ su tunnel
+	servidor$ cat raspberry_public_key >> ~/.ssh/authorized_keys
 
-* Crear archivo authorized_keys en carpteta .ssh
-	$ touch .ssh/authorized_keys
+Con esto debemos tener nuestra llave pública que se creo en la Raspberry Pi
+dentro de la cuenta del usuario tunnel dentro del servidor. Para validar que
+la llave se haya copiado correctamente,  desplegamos que el contenido del
+archivo `~/.ssh/authorized_keys` y verificamos que sea el mismo que generamos
+para el usuario tunnel en la Raspberry Pi.
 
-* Copiar contenidos de id_rsa.pub a authorized_keys
-	$ cat /home/<usuario-server>/id_rsa.pub >> .ssh/authorized_keys
+	servidor$ cat ~.ssh/authorized_keys
 
-Con esto debemos tener nuestra llave publica que se creo en la raspberry pi dentro de
-la cuenta usuarioTunelServer dentro del servidor.
-
-Para validar esto validamos que el contenido de el archivo .ssh/authorized_keys sea el mismo
-en el usuarioTunel de la raspberrypi y el usuarioTunelServer del servidor.
-
-	$ cat .ssh/authorized_keys
-
-# Crear tunel
+# Crear túnel
 ## Crear y probar comando tunel.
 
 * Ingresar a raspberrypi con el usuarioTunel desde pc/laptop.
