@@ -34,28 +34,28 @@ que la conexión se reestablesca si se llegase a interrumpir.
 
 * Habilitar SSH en raspberry.
 
-	rpi$ sudo raspy-config
+	`rpi$ sudo raspy-config`
 
 [imagen raspy-config menu]
 [imagen raspy-config opcion]
 
 * Crear usuario para el tunel en Raspberry.
 
-	rpi$ sudo adduser tunnel
+	`rpi$ sudo adduser tunnel`
 
 [imagen alta-usuario]
 
 * Cambiar de usuario a tunnel.
 
-	rpi$ su tunnel
+	`rpi$ su tunnel`
 
 * Crear un par de llaves SSH para el usuario Tunnel.
 
-	rpi$ ssh-keygen
+	`rpi$ ssh-keygen`
 
 * Obtener la dirección IP asignada a la Raspberry.
 
-	rpi$ ip addr show
+	`rpi$ ip addr show`
 
 Esto desplegara una lista de tus interfaces, busca la dirección IP
 como un juego de cuatro números junto la etiqueta 'inet'.
@@ -75,16 +75,18 @@ En este caso la dirección sería `192.168.0.2`
 
 * Crear usuario para túnel en servidor
 
-	servidor$ sudo adduser tunnel
+	`servidor$ sudo adduser tunnel`
 
 [imagen alta-usuario]
 
 * Crear carpeta .ssh
 
-	servidor$ su tunnel
-	servidor$ cd ~
-	servidor$ mkdir .ssh
-	servidor$ cd .ssh
+```
+servidor$ su tunnel
+servidor$ cd ~
+servidor$ mkdir .ssh
+servidor$ cd .ssh
+```
 
 ## Copiar llave pública al servidor
 
@@ -95,17 +97,20 @@ la contraseña del usuario cada vez que tenemos que conectarnos al él.
 * Copiamos la llave pública, id_rsa.pub, de la Raspberry al servidor, utilizando
   nuestra PC como intermediario. Reemplaza <raspberry-ip> con la dirección.
 
-	PC$ scp tunnel@<raspberry-ip>:.ssh/id_rsa.pub raspberry_public_key
+	`PC$ scp tunnel@<raspberry-ip>:.ssh/id_rsa.pub raspberry_public_key`
 
 * Una vez hecho esto, copiamos la llave al servidor:
-	PC$ scp raspberry_public_key tunnel@<servidor>:
+
+	`PC$ scp raspberry_public_key tunnel@<servidor>:`
 
 * Ingresamos al servidor para colocar la llave pública de la Raspberry en la
   lista de llaves autorizadas para realizar identificar.
 
-	PC$ ssh <servidor>
-	servidor$ su tunnel
-	servidor$ cat raspberry_public_key >> ~/.ssh/authorized_keys
+```
+PC$ ssh <servidor>
+servidor$ su tunnel
+servidor$ cat raspberry_public_key >> ~/.ssh/authorized_keys
+```
 
 Con esto debemos tener nuestra llave pública que se creo en la Raspberry Pi
 dentro de la cuenta del usuario tunnel dentro del servidor. Para validar que
@@ -113,7 +118,8 @@ la llave se haya copiado correctamente,  desplegamos que el contenido del
 archivo `~/.ssh/authorized_keys` y verificamos que sea el mismo que generamos
 para el usuario tunnel en la Raspberry Pi.
 
-	servidor$ cat ~.ssh/authorized_keys
+	`servidor$ cat ~.ssh/authorized_keys`
+
 
 # Crear túnel
 
@@ -121,12 +127,14 @@ para el usuario tunnel en la Raspberry Pi.
 
 * Ingresamos a raspberrypi con el tunnel desde pc/laptop.
 
-	PC$ ssh tunnel@<ip-raspberry>
+	`PC$ ssh tunnel@<ip-raspberry>`
 
 * Probamos correr manualmente el comando que crea el túnel
 
-	rpi$ ssh -NTC -o ServerAliveInterval=60 -o ExitOnForwardFailure=yes -o StrictHostKeyChecking=no \
-	 -i ~/.ssh/id_rsa -R 12345:localhost:22 tunnel@<servidor>
+```
+rpi$ ssh -NTC -o ServerAliveInterval=60 -o ExitOnForwardFailure=yes -o StrictHostKeyChecking=no \
+ -i ~/.ssh/id_rsa -R 12345:localhost:22 tunnel@<servidor>
+```
 
 Si el comando fue bien la terminal se quedara en "stand-by", esperando
 conexiones. Se puede agregar la opción `-v` al comando para ver lo
@@ -174,7 +182,7 @@ Guardamos el archivo antes de salir (presionando Ctrl-o en Nano).
 
 * Iniciamos el servicio.
 
-	rpi$ sudo systemctl restart tunnel-service
+	`rpi$ sudo systemctl restart tunnel-service`
 
 Si el resultado es positivo veremos el siguiente mensaje en pantalla.
 
@@ -182,7 +190,7 @@ Si el resultado es positivo veremos el siguiente mensaje en pantalla.
 
 * Habilitamos al servicio para que se ejecute desde boot.
 
-	rpi$ sudo systemctl enable tunnel-service
+	`rpi$ sudo systemctl enable tunnel-service`
 
 # Probar túnel.
 
@@ -190,8 +198,10 @@ Habiendo hecho esto, accedemos con cualquier usuario al servidor y cambiamos
 al usuario tunnel. Reiniciamos la Raspberry Pi, una vez reiniciada accedemos
 al túnel desde el servidor:
 
-	servidor$ su tunnel
-	servidor$ ssh localhost -p 12345
+```
+servidor$ su tunnel
+servidor$ ssh localhost -p 12345
+```
 
 Con ello debemos aparecer en la terminal de nuestra Raspberry Pi.
 
