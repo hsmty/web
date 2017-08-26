@@ -20,7 +20,7 @@ automáticamente cada que se enciende la máquina, así podemos asegurarnos
 que la conexión se reestablesca si se llegase a interrumpir.
 
 
-# Asumpciones
+# Asunciones
 
 * Se tiene acceso a un servidor con IP pública y SSH
 * Se tiene una PC (Workstation/Desktop/Mac/Laptop).
