@@ -116,43 +116,52 @@ para el usuario tunnel en la Raspberry Pi.
 	servidor$ cat ~.ssh/authorized_keys
 
 # Crear túnel
-## Crear y probar comando tunel.
 
-* Ingresar a raspberrypi con el usuarioTunel desde pc/laptop.
-`$ssh usuarioTunel@<ip-raspberry>`
+## Probar el comando para el túnel.
 
-* Probar comando para tunel.
-`$ssh -NTC -o ServerAliveInterval=60 -o ExitOnForwardFailure=yes -o StrictHostKeyChecking=no -i /home/usuarioTunel/.ssh/id_rsa -R 12345:localhost:22 usuarioTunelServer@<ip-server>`
+* Ingresamos a raspberrypi con el tunnel desde pc/laptop.
 
-Si el comando fue bien la terminal se quedara en stand-by esperando conexiones
-Se puede agregar la opcion `-v` para ver lo que ocurre con las conexiones.
+	PC$ ssh tunnel@<ip-raspberry>
 
-Para probar esto accedenmos al server y cambiamos a usuarioTunelServer, con ese usuario
-seleccionado ejecutamos
-`$ssh localhost -p 12345`
+* Probamos correr manualmente el comando que crea el túnel
 
-Si todo sale bien nuestro prompt cambia hacia el prompt de nuestra raspberrypi.
-`usuarioTunel@raspberrypi$`
+	rpi$ ssh -NTC -o ServerAliveInterval=60 -o ExitOnForwardFailure=yes -o StrictHostKeyChecking=no \
+	 -i ~/.ssh/id_rsa -R 12345:localhost:22 tunnel@<servidor>
 
-## Crear servicio de tunel.
+Si el comando fue bien la terminal se quedara en "stand-by", esperando
+conexiones. Se puede agregar la opción `-v` al comando para ver lo
+que ocurre con las conexiones, esto nos ayuda en caso de que ocurra un error.
 
-Una ves validado el comando el tunnel lo que falta es hacer que el mismo se inicialice
-cada que la raspberrypi realize un boot. Para ello usamos systemd para crear un servicio
-que realize esta tarea.
+Para probar que realmente tenemos acceso, entramos al servidor y cambiamos de
+usuario a "tunnel", con ese usuario activo ejecutamos:
 
-* Crear el archivo del servicio
-`$sudo nano /etc/systemd/system/servicio-tunel`
+	servidor$ ssh localhost -p 12345
 
-* Añadimos el siguiente texto al archivo.
+Si todo sale bien nuestro prompt cambia hacia el prompt de nuestra Raspberry Pi:
+
+	rpi$
+
+## Crear servicio de túnel.
+
+Una vez validado el comando de túnel, lo que falta es hacer que se ejecute
+cada que la Raspberry Pi se encienda. Para ello usamos __systemd__[4] para
+crear un servicio que realice esta tarea.
+
+* Creamos el archivo del servicio
+
+	rpi$ sudo nano /etc/systemd/system/tunnel-service
+
+* Añadimos la siguiente configuración a este archivo
+
 ```
 [Unit]
-Description=Servicio de tunel ssh
+Description=SSH Tunnel Service
 ConditionPathExists=|/usr/bin
 After=network.target
 
 [Service]
-User=usuarioTunel
-ExecStart=/usr/bin/ssh -NTC -o ServerAliveInterval=60 -o ExitOnForwardFailure=yes -o StrictHostKeyChecking=no -i %h/.ssh/id_rsa -R 12345:localhost:22 usuarioTunelServer@<ip-server>
+User=tunnel
+ExecStart=/usr/bin/ssh -NTC -o ServerAliveInterval=60 -o ExitOnForwardFailure=yes -o StrictHostKeyChecking=no -i %h/.ssh/id_rsa -R 12345:localhost:22 tunnel@<servidor>
 
 RestartSec=3
 Restart=always
@@ -160,34 +169,44 @@ Restart=always
 [Install]
 WantedBy=multi-user.target
 ```
-Guardamos el archivo antes de salir (Ctrl-o)
+
+Guardamos el archivo antes de salir (presionando Ctrl-o en Nano).
 
 * Iniciamos el servicio.
-`$sudo systemctl restart servicio-tunel`
 
-Si el resultado es positivo veremos el siguiente log en pantalla
+	rpi$ sudo systemctl restart tunnel-service
+
+Si el resultado es positivo veremos el siguiente mensaje en pantalla.
 
 [imagen log de systemctl restart]
 
 * Habilitamos al servicio para que se ejecute desde boot.
-`$sudo systemctl enable servicio-tunel`
 
-# Probar tunel.
+	rpi$ sudo systemctl enable tunnel-service
 
-Con estos pasos realizados accedemos con cualquier usuario al server y cambiamos
-al usuarioTunelServer.
-Reiniciamos la raspberrypi y una ves reiniciada accedemos al tunel
-`usuarioTunelServer@<nombre-server>$ssh localhost -p 12345`
+# Probar túnel.
 
-Con ello debemos aparecer en la terminal de nuestra raspberrypi.
+Habiendo hecho esto, accedemos con cualquier usuario al servidor y cambiamos
+al usuario tunnel. Reiniciamos la Raspberry Pi, una vez reiniciada accedemos
+al túnel desde el servidor:
+
+	servidor$ su tunnel
+	servidor$ ssh localhost -p 12345
+
+Con ello debemos aparecer en la terminal de nuestra Raspberry Pi.
 
 
 # Recomendaciones.
-* cambiar el nombre de la raspberrypi a uno que sea mas especifico a nuestra aplicacion
-(podemos tener muchas raspies regadas por ahi).
-* Asignar ip statica a la raspberrypi (si por alguna razon estamos en el sitio y tenemos
-que acceder a la misma nos ahorramos el paso de buscar la ip asignada por la red)
-* Usar un usuario diferente para cada tunel en el server para una mejor administracion.
-* Se puede validar si el tunel esta vivo del lado del server si buscamos por conexiones
-ssh en modo LISTEN
-`$netstat -l | grep ssh`
+
+* Cambia el nombre de la Raspberry Pi a uno que sea mas especifico a nuestra
+aplicación (podemos tener muchas __raspies__ regadas por ahi).
+
+* Asignar una dirección IP estática a la Raspberry, si por alguna razón
+estamos en el sitio y tenemos que acceder a la misma nos ahorramos el paso
+de buscar la dirección asignada por la red.
+
+* Usar un usuario diferente para cada túnel en el server para una mejor
+administración.
+
+* Se puede validar si el túnel esta vivo del lado del servidor si buscamos
+por conexiones ssh en modo **LISTEN** `servidor$ netstat -l | grep ssh`
