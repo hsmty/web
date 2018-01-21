@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Túnel ssh para RaspberryPi"
-author: Edén Candelas
+author: Edén Candelas/Rafael Diaz de Leon
 ---
 
 # El objetivo.
