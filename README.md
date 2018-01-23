@@ -1,13 +1,13 @@
-#Hackerspace Monterrey Website.
+# Hackerspace Monterrey Website.
 
-###Requirements
+## Requirements
 
 - Ruby
 - RubyGems
 - Rake
 - Bundler
 
-###Usage
+## Usage
 
 Assuming you have RubyGems, install [Rake](http://rake.rubyforge.org) and
 [Bundler](http://bundler.io).
