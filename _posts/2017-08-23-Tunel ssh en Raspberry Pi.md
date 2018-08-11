@@ -4,7 +4,7 @@ title: "Túnel ssh para RaspberryPi"
 author: Edén Candelas/Rafael Diaz de Leon
 ---
 
-# El objetivo.
+## El objetivo.
 
 Acceder a una RaspberryPi[1] que está detrás de una IP dinámica (lo más
 común para proveedores de Internet en hogares) sin necesidad de configurar
@@ -18,9 +18,9 @@ utilizando SSH[3], esto crea una conexión encriptada desde la Raspberry Pi
 al servidor, la configuramos de tal manera que esta conexión inicie
 automáticamente cada que se enciende la máquina, así podemos asegurarnos
 que la conexión se reestablesca si se llegase a interrumpir.
+<!--more-->
 
-
-# Asunciones
+## Asunciones
 
 * Se tiene acceso a un servidor con IP pública y SSH
 * Se tiene una PC (Workstation/Desktop/Mac/Laptop).
