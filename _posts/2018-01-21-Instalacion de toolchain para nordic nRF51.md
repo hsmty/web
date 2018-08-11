@@ -9,7 +9,7 @@ La razon para este tutorial es la necesidad de utilizar el nRF51822 en un proyec
 Al momento de escribir esto tengo una tarjeta [Carbon de 96boards] que contiene un nRF51822 con la interface SWD expuesta, y un ST Link V2 a modo de programador.
 
 ![stlinkCarbon][imgstlink]
-
+<!--more-->
 
 Querer mantener trabajandome en linux me obliga a manejar el toolchain con herramientas abiertas. Lo bueno es que se tiene lo necesario para poder hacer esto:
 
